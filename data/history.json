@@ -1,0 +1,212 @@
+[
+    {
+        "role": "Python Developer",
+        "difficulty": "Hard",
+        "question": "what is AI",
+        "answer": "dont know",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 05:26:13 AM"
+    },
+    {
+        "role": "Python Developer",
+        "difficulty": "Hard",
+        "question": "what is ai",
+        "answer": "nothing",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 05:55:16 AM"
+    },
+    {
+        "role": "Python Developer",
+        "difficulty": "Hard",
+        "question": "ai",
+        "answer": "nothing",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 06:05:37 AM"
+    },
+    {
+        "role": "Python Developer",
+        "difficulty": "Hard",
+        "question": "imagine you're building a real-time analytics service that processes millions of incoming events per second from various sources. Each event has a timestamp, a user ID, and a value. The service needs to provide the following functionalities:\n\n1.  **Real-time aggregation:** Calculate the sum of values for each user within a sliding time window (e.g., last 5 minutes).\n2.  **Trend detection:** Identify users whose aggregate value has increased by more than 50% in the last hour compared to the hour before.\n3.  **Anomaly detection:** Flag users whose event value significantly deviates from their historical average for similar time periods.\n\nDesign and implement a Python-based system to handle this workload efficiently. Consider data structures, concurrency, potential bottlenecks, memory usage, and strategies for handling out-of-order events. You should focus on a scalable and resilient architecture",
+        "answer": "don't know",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 10:17:55 AM"
+    },
+    {
+        "role": "string",
+        "difficulty": "string",
+        "question": "string",
+        "answer": "hi how are you",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 10:32:47 AM"
+    },
+    {
+        "role": "Python Developer",
+        "difficulty": "Hard",
+        "question": "ask how are you",
+        "answer": "hi how are you",
+        "feedback": "Overall Score: 35/100\n\nTechnical Knowledge: N/A (This is a social pleasantry, not a technical question)\n\nCommunication Skills: 20/10\n\nConfidence: 20/10\n\nStrengths:\n- The candidate reciprocated the greeting and question, indicating an awareness of social etiquette.\n\nWeaknesses:\n- The answer is extremely brief and lacks any elaboration.\n- It's a direct echo of the interviewer's question, which suggests a lack of independent thought or conversational engagement.\n- It doesn't convey enthusiasm or offer any detail about their current state.\n\nSuggestions:\n- Expand on the greeting: Instead of just saying \"how are you,\" offer a brief, positive statement about your well-being.\n- Be conversational: Aim to contribute to a brief, positive opening to the interview.\n- Show engagement: A slightly more detailed answer signals you are present and ready to interact.\n\nIdeal Answer:\n\"Hi, I'm doing well, thank you for asking! I'm excited to be here and looking forward to our conversation today. How are you?\"",
+        "timestamp": "09-07-2026 10:35:19 AM"
+    },
+    {
+        "session_id": "3d505fb7",
+        "role": "Python Developer",
+        "difficulty": "Easy",
+        "question": "What is Python?",
+        "answer": "Python is a programming language.",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 11:34:32 AM"
+    },
+    {
+        "session_id": "5c8d8278",
+        "role": "Python Developer",
+        "difficulty": "Easy",
+        "question": "What is Python?",
+        "answer": "Python is a programming language.",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 11:37:49 AM"
+    },
+    {
+        "session_id": null,
+        "role": "Python Developer",
+        "difficulty": "EASY",
+        "question": "what is AI",
+        "answer": "hi how are you",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 12:02:25 PM"
+    },
+    {
+        "session_id": "da1901b3",
+        "role": "Developer",
+        "difficulty": "hard",
+        "question": "Design a distributed, fault-tolerant system to serve billions of real-time chat messages, considering latency and consistency trade-offs",
+        "answer": "nothing",
+        "feedback": "Overall Score: 0/100\n\nTechnical Knowledge: 0/10\n\nCommunication Skills: 0/10\n\nConfidence: 0/10\n\nStrengths:\n- None observed.\n\nWeaknesses:\n- Complete lack of technical knowledge regarding distributed systems design.\n- Inability to formulate any approach to the problem.\n- No attempt to engage with the question.\n\nSuggestions:\n- Thoroughly study distributed systems concepts, including topics like data partitioning, replication, consistency models (e.g., eventual consistency, strong consistency), fault tolerance mechanisms (e.g., replication, consensus algorithms), messaging queues, and real-time communication protocols.\n- Practice system design problems by breaking them down into smaller, manageable components and considering trade-offs.\n- Prepare for interviews by researching common system design questions and formulating potential solutions.\n\nIdeal Answer:\nThis is a complex system design problem that requires a multi-faceted approach. Here's a breakdown of how we can design a distributed, fault-tolerant system for billions of real-time chat messages:\n\n**1. Core Components & Architecture:**\n\n*   **Client Applications:** Mobile, web, and desktop clients.\n*   **API Gateway/Load Balancer:** Handles incoming requests, distributes them across backend services, and provides a single entry point.\n*   **Connection Management Service:** Manages persistent WebSocket connections with clients. This is crucial for real-time messaging.\n*   **Message Ingestion Service:** Receives messages from clients, performs initial validation, and publishes them to a message queue.\n*   **Message Queue (e.g., Kafka, Pulsar):** Acts as a buffer, decouples producers and consumers, and ensures message durability and ordering within partitions. This is key for fault tolerance and scalability.\n*   **Message Processing/Distribution Service:** Consumes messages from the queue, determines recipients, and routes messages to the appropriate connection servers or persistence layer.\n*   **User/Presence Service:** Tracks user online/offline status and manages presence information.\n*   **Persistence Layer (Databases):**\n    *   **NoSQL Database (e.g., Cassandra, DynamoDB):** For storing chat messages. Designed for high write throughput and availability, suitable for storing billions of messages. Data can be partitioned by chat room ID or user ID.\n    *   **Cache (e.g., Redis):** For storing recent messages, user session data, and presence information to reduce latency for frequently accessed data.\n*   **Real-time Delivery Service:** Pushes messages to connected clients via WebSockets.\n\n**2. Scalability:**\n\n*   **Horizontal Scaling:** All services should be designed to scale horizontally by adding more instances.\n*   **Data Sharding/Partitioning:**\n    *   Message Queue: Partition topics by chat room ID or a combination of user IDs to ensure messages within a conversation are processed in order.\n    *   Database: Shard message data based on chat room ID or a composite key to distribute load across multiple database instances.\n*   **Connection Management:** Distribute WebSocket connections across multiple connection management servers.\n\n**3. Fault Tolerance:**\n\n*   **Redundancy:** Deploy multiple instances of each service behind load balancers.\n*   **Message Queue Durability:** Message queues like Kafka are designed with replication and partition syncing to prevent data loss.\n*   **Database Replication:** Use multi-master or leader-follower replication for databases to ensure availability even if a node fails.\n*   **Idempotency:** Design services to be idempotent so that retrying a failed operation doesn't cause unintended side effects (e.g., sending a message twice).\n*   **Graceful Degradation:** In case of partial failures, the system should still be able to serve a subset of functionalities.\n*   **Heartbeats and Health Checks:** Implement regular health checks for all services and instances.\n\n**4. Latency and Consistency Trade-offs:**\n\n*   **Latency:**\n    *   **WebSockets:** Essential for real-time delivery.\n    *   **Caching:** Storing recent messages in Redis for fast retrieval.\n    *   **Proximity Deployment:** Deploying servers geographically closer to users.\n    *   **Content Delivery Networks (CDNs):** For static assets.\n*   **Consistency:**\n    *   **Eventual Consistency:** For message delivery, eventual consistency is often acceptable. Messages might take a few moments to appear for all recipients, but they will eventually be delivered. This is a common trade-off to achieve high availability and low latency.\n    *   **Strong Consistency:** For critical operations like user authentication or updating a user's status, strong consistency might be required. This can be achieved using consensus algorithms (e.g., Raft, Paxos) or transactional databases, but it comes at a cost to latency and availability.\n    *   **Ordering:** Within a specific chat room, messages should ideally be delivered in the order they were sent. This can be managed by partitioning the message queue by chat room ID.\n\n**5. Key Design Decisions and Considerations:**\n\n*   **Message Protocol:** WebSockets for real-time bidirectional communication.\n*   **Message Format:** JSON is a common choice for message payloads.\n*   **Authentication & Authorization:** Securely authenticate users and authorize them to join specific chat rooms.\n*   **Message Fan-out:** Efficiently sending messages to multiple recipients. This can be done by the Message Processing Service looking up active connections for a room.\n*   **Offline Messaging:** Store messages in the database for users who are offline and deliver them upon reconnection.\n*   **Read Receipts & Typing Indicators:** These features add complexity and require careful state management.\n*   **Message Search:** For message search, a dedicated search engine (e.g., Elasticsearch) might be integrated, indexing messages from the persistence layer.\n*   **Monitoring and Alerting:** Comprehensive monitoring of all system components is vital for identifying and resolving issues quickly.\n\nThis is a high-level overview. A real-world implementation would involve deep dives into each component, selecting specific technologies, and rigorously testing for performance, scalability, and reliability.",
+        "timestamp": "09-07-2026 02:23:16 PM"
+    },
+    {
+        "session_id": null,
+        "role": "General",
+        "difficulty": "Medium",
+        "question": "what is ai",
+        "answer": "AI is a artificial intelligence",
+        "feedback": "Overall Score: 5/100\n\nTechnical Knowledge: 1/10\n\nCommunication Skills: 2/10\n\nConfidence: 2/10\n\nStrengths:\n- The candidate attempted to answer the question.\n\nWeaknesses:\n- The answer is circular and provides no actual definition or understanding of Artificial Intelligence.\n- The candidate did not elaborate or demonstrate any knowledge of the topic.\n- The candidate's response indicates a fundamental lack of understanding of the concept being asked.\n\nSuggestions:\n- Prepare by thoroughly understanding fundamental technical concepts relevant to the role.\n- Practice articulating definitions and explanations clearly and concisely.\n- For future interviews, aim to provide a comprehensive definition that covers the essence of the topic.\n\nIdeal Answer:\nArtificial Intelligence (AI) refers to the simulation of human intelligence processes by machines, especially computer systems. These processes include learning (the acquisition of information and rules for using the information), reasoning (using rules to reach approximate or definite conclusions), and self-correction. AI can also involve understanding natural language, perceiving environments, and making decisions. The goal is to create systems that can perform tasks that typically require human intelligence.",
+        "timestamp": "09-07-2026 04:10:34 PM"
+    },
+    {
+        "session_id": "1820f5dc",
+        "role": "developer",
+        "difficulty": "hard",
+        "question": "Design a distributed caching system that provides low latency reads and eventual consistency across multiple data centers",
+        "answer": "nothing",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 04:27:25 PM"
+    },
+    {
+        "session_id": "1f9c335f",
+        "role": "developer",
+        "difficulty": "hard",
+        "question": "Design a distributed cache system that prioritizes low latency and high availability for a global service.",
+        "answer": "i dont know",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 04:32:28 PM"
+    },
+    {
+        "session_id": "1f9c335f",
+        "role": "General",
+        "difficulty": "Medium",
+        "question": "Design a distributed cache system that prioritizes low latency and high availability for a global service.",
+        "answer": "AI is a artificial intelligence",
+        "feedback": "Overall Score: 5/100\n\nTechnical Knowledge: 0/10\n\nCommunication Skills: 2/10\n\nConfidence: 3/10\n\nStrengths:\n- The candidate attempted to answer the question.\n\nWeaknesses:\n- The provided answer is completely irrelevant to the interview question. It does not address any aspect of designing a distributed cache system.\n- The candidate demonstrates a severe lack of understanding of the technical domain required for this question.\n- Communication is minimal and ineffective.\n\nSuggestions:\n- The candidate needs to thoroughly review fundamental concepts related to distributed systems, caching, data structures, networking, and system design.\n- Practice responding to technical prompts by focusing on the core requirements and breaking down the problem into manageable components.\n- Understand the difference between an artificial intelligence and a distributed cache system.\n\nIdeal Answer:\nA distributed cache system for low latency and high availability globally involves several key components and design considerations:\n\n1.  **Core Architecture:**\n    *   **Distributed Hash Table (DHT) / Consistent Hashing:** To distribute cache keys across multiple cache nodes, minimizing data re-shuffling when nodes are added or removed. This is crucial for scalability and availability.\n    *   **Replication:** Storing multiple copies of data across different nodes (e.g., primary-replica, N-way replication) to ensure data availability in case of node failures.\n    *   **Sharding/Partitioning:** Dividing the cache data into partitions, with each partition managed by a subset of nodes.\n\n2.  **Low Latency:**\n    *   **In-Memory Storage:** Cache data should reside primarily in RAM for fast read/write operations.\n    *   **Proximity:** Deploying cache nodes geographically close to the end-users or application servers (e.g., edge caching, regional clusters) to reduce network latency.\n    *   **Efficient Data Structures:** Using optimized data structures for key-value lookups.\n    *   **Connection Pooling:** Maintaining persistent connections to cache servers to avoid connection setup overhead.\n\n3.  **High Availability:**\n    *   **Redundancy:** Implementing replication and considering active-active setups for read operations.\n    *   **Failure Detection and Recovery:** Mechanisms to detect failed nodes quickly (e.g., heartbeats, gossip protocols) and re-route requests to healthy nodes. Automatic failover and data re-balancing.\n    *   **Load Balancing:** Distributing incoming requests evenly across available cache nodes.\n    *   **Graceful Degradation:** Designing the system so that if the cache is unavailable, the application can still function (e.g., by fetching directly from the source database, albeit with higher latency).\n\n4.  **Consistency Models:**\n    *   **Eventual Consistency:** Often a trade-off for performance and availability in distributed systems. Writes may propagate to replicas with a delay.\n    *   **Strong Consistency:** More complex and can impact latency; often achieved through quorum-based writes. The choice depends on application requirements.\n\n5.  **Eviction Policies:**\n    *   LRU (Least Recently Used), LFU (Least Frequently Used), FIFO (First-In, First-Out) to manage memory when it's full.\n\n6.  **Protocols and Interfaces:**\n    *   **Standard Protocols:** Using well-defined protocols like Memcached or Redis wire protocols for interoperability.\n    *   **Client Libraries:** Efficient client libraries that handle connection management, request routing, and error handling.\n\n7.  **Scalability:**\n    *   Horizontal scaling by adding more cache nodes.\n    *   Dynamic re-balancing of data as nodes are added or removed.\n\n**Example Technologies:** Redis Cluster, Memcached, custom solutions leveraging technologies like Apache Cassandra or ZooKeeper for coordination.\n\nThe design would involve considering trade-offs between consistency, availability, and partition tolerance (CAP theorem), as well as latency requirements for different types of data.",
+        "timestamp": "09-07-2026 04:37:29 PM"
+    },
+    {
+        "session_id": null,
+        "role": "General",
+        "difficulty": "Medium",
+        "question": "what is ai",
+        "answer": "ok so AI basically a term which refers to Artificial Intelligence and nowadays we are using it on a vital side",
+        "feedback": "Overall Score: 15/100\n\nTechnical Knowledge: 2/10\n\nCommunication Skills: 3/10\n\nConfidence: 4/10\n\nStrengths:\n- The candidate attempted to answer the question.\n\nWeaknesses:\n- The answer is extremely vague and provides no substantive definition of AI.\n- The statement \"we are using it on a vital side\" is unclear and lacks technical relevance.\n- The candidate did not demonstrate any understanding of the core concepts, applications, or history of AI.\n- Communication is very informal and lacks structure.\n\nSuggestions:\n- When asked a technical definition, provide a clear, concise, and accurate explanation.\n- Elaborate on the concept by mentioning key aspects like machine learning, problem-solving, or decision-making.\n- Consider the audience and tailor the explanation accordingly, but always maintain technical accuracy.\n- Practice defining technical terms in a structured and informative manner.\n\nIdeal Answer:\nArtificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think and learn like humans. This typically involves creating systems that can perform tasks that normally require human intelligence, such as visual perception, speech recognition, decision-making, and problem-solving. AI encompasses various subfields like machine learning, deep learning, natural language processing, and robotics, and it's used in a wide range of applications from virtual assistants and recommendation engines to self-driving cars and medical diagnosis.",
+        "timestamp": "09-07-2026 05:09:51 PM"
+    },
+    {
+        "session_id": null,
+        "role": "General",
+        "difficulty": "Medium",
+        "question": "what is ai",
+        "answer": "AI is a artificial intelligence",
+        "feedback": "Overall Score: 5/100\n\nTechnical Knowledge: 0/10\n\nCommunication Skills: 2/10\n\nConfidence: 3/10\n\nStrengths:\n- The candidate attempted to answer the question.\n\nWeaknesses:\n- The answer is circular and provides no actual definition of AI.\n- The candidate lacks fundamental knowledge of the topic being discussed.\n- The response is extremely brief and demonstrates a lack of engagement with the question.\n\nSuggestions:\n- It's crucial to be able to define core technical concepts. When asked \"What is X?\", aim to provide a concise yet informative definition that goes beyond simply restating the term.\n- For technical interviews, preparation is key. Familiarize yourself with fundamental concepts in computer science and the specific domain you're interviewing for.\n- Practice explaining technical terms in your own words. Try to break down complex ideas into simpler components.\n\nIdeal Answer:\nArtificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think and learn like humans. This involves creating systems that can perform tasks such as learning, problem-solving, decision-making, perception, and natural language understanding. AI aims to build intelligent agents that can reason, plan, and act autonomously to achieve goals.",
+        "timestamp": "09-07-2026 05:11:31 PM"
+    },
+    {
+        "session_id": null,
+        "role": "General",
+        "difficulty": "Medium",
+        "question": "what is ai",
+        "answer": "AI is a artificial intelligence",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 05:12:15 PM"
+    },
+    {
+        "session_id": null,
+        "role": "General",
+        "difficulty": "Medium",
+        "question": "string",
+        "answer": "ok so AI basically a term which refers to Artificial Intelligence and nowadays we are using it on a vital side",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 05:23:22 PM"
+    },
+    {
+        "session_id": null,
+        "role": "General",
+        "difficulty": "Medium",
+        "question": "string",
+        "answer": "ok so AI basically a term which refers to Artificial Intelligence and nowadays we are using it on a vital side",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 05:23:32 PM"
+    },
+    {
+        "session_id": null,
+        "role": "General",
+        "difficulty": "Medium",
+        "question": "string",
+        "answer": "ok so AI basically a term which refers to Artificial Intelligence and nowadays we are using it on a vital side",
+        "feedback": "Overall Score: 10/100\n\nTechnical Knowledge: 1/10\n\nCommunication Skills: 4/10\n\nConfidence: 5/10\n\nStrengths:\n- The candidate attempted to answer the question.\n\nWeaknesses:\n- The candidate's answer is extremely superficial and lacks any technical depth.\n- The term \"vital side\" is vague and doesn't convey any meaningful information about AI's application.\n- The answer does not demonstrate any understanding of what AI is or how it works.\n- The candidate did not elaborate or provide any examples.\n\nSuggestions:\n- When asked about a technical term, aim to define it clearly and concisely.\n- Provide specific examples of its applications or components.\n- Elaborate on the concepts rather than giving a one-sentence overview.\n- For \"string,\" a more appropriate response would involve explaining what a string is in programming, its data type, common operations, and perhaps its representation in memory.\n\nIdeal Answer:\nA \"string\" in programming is a sequence of characters. It's a fundamental data type used to represent text. Strings are typically enclosed in quotation marks (e.g., \"hello world\" or 'Google'). Common operations on strings include concatenation (joining strings), finding the length of a string, accessing individual characters, and searching for substrings. Different programming languages have specific ways of handling strings, including their memory allocation and available methods for manipulation.",
+        "timestamp": "09-07-2026 05:23:53 PM"
+    },
+    {
+        "session_id": null,
+        "role": "General",
+        "difficulty": "Medium",
+        "question": "Tell me about yourself.",
+        "answer": "hello everyone myself Nikita will be teaching artificial intelligence",
+        "feedback": "Overall Score: 5/100\n\nTechnical Knowledge: 0/10\n\nCommunication Skills: 1/10\n\nConfidence: 1/10\n\nStrengths:\n- The candidate attempted to answer the question.\n\nWeaknesses:\n- The answer is extremely brief and does not provide any relevant information about the candidate's background, skills, or experience.\n- It does not align with the expected response for a \"Tell me about yourself\" question in a technical interview context.\n- The candidate seems to have misunderstood the purpose of the question and the role they are interviewing for.\n- The phrasing \"will be teaching artificial intelligence\" is unclear and suggests a teaching role rather than a role where they would be applying AI knowledge.\n\nSuggestions:\n- Prepare a concise and relevant introduction that highlights your technical background, key skills, relevant experiences, and career aspirations.\n- Tailor your introduction to the specific role you are interviewing for, emphasizing how your qualifications align with the job requirements.\n- Practice delivering your introduction confidently and clearly, ensuring it flows naturally.\n- Understand that \"Tell me about yourself\" is an opportunity to showcase your suitability for the role and to set the stage for the rest of the interview.\n\nIdeal Answer:\n\"Thank you for having me. I'm a software engineer with X years of experience, specializing in machine learning and deep learning. In my previous role at [Previous Company], I led the development of a [specific project/product] that resulted in [quantifiable achievement, e.g., a 15% improvement in accuracy, a 20% reduction in processing time]. I'm particularly passionate about [specific area of AI, e.g., natural language processing, computer vision] and am excited by the opportunity at Google to contribute to [mention something specific about Google's AI work or the team's focus].\"",
+        "timestamp": "09-07-2026 06:16:14 PM"
+    },
+    {
+        "session_id": null,
+        "role": "General",
+        "difficulty": "Medium",
+        "question": "Tell me about yourself.",
+        "answer": "hello everyone myself Nikita will be teaching artificial intelligence",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 06:16:17 PM"
+    },
+    {
+        "session_id": null,
+        "role": "General",
+        "difficulty": "Medium",
+        "question": "Tell me about yourself.",
+        "answer": "hello everyone myself Nikita will be teaching artificial intelligence",
+        "feedback": "\nOverall Score: 40/100\n\nTechnical Knowledge: 3/10\n\nCommunication Skills: 4/10\n\nConfidence: 2/10\n\nStrengths:\n- Attempted to answer the question.\n\nWeaknesses:\n- Technical concepts are missing.\n- Explanation lacks clarity.\n\nSuggestions:\n- Revise the core concepts.\n- Practice coding interviews.\n- Support answers with examples.\n\nIdeal Answer:\nA strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.\n",
+        "timestamp": "09-07-2026 06:16:22 PM"
+    },
+    {
+        "session_id": null,
+        "role": "General",
+        "difficulty": "Medium",
+        "question": "what is ai",
+        "answer": "hello everyone myself Nikita will be teaching artificial intelligence",
+        "feedback": "Overall Score: 5/100\n\nTechnical Knowledge: 0/10\n\nCommunication Skills: 3/10\n\nConfidence: 4/10\n\nStrengths:\n- The candidate attempted to respond.\n\nWeaknesses:\n- The candidate's response was completely unrelated to the interview question \"What is AI?\".\n- The candidate did not demonstrate any technical knowledge regarding Artificial Intelligence.\n- The communication was not appropriate for a technical interview setting.\n- Confidence was low due to the unrelated nature of the response.\n\nSuggestions:\n- It is crucial to listen carefully to the interview question and provide a relevant answer.\n- Familiarize yourself with fundamental technical concepts, especially for the role you are interviewing for.\n- Practice answering common interview questions in a structured and informative manner.\n\nIdeal Answer:\nArtificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions. It encompasses a broad range of technologies that can perform tasks typically requiring human intelligence, such as learning, problem-solving, decision-making, perception, and natural language understanding. AI systems can range from simple rule-based programs to complex deep learning models that can process vast amounts of data to identify patterns and make predictions. The goal of AI is to create systems that can operate autonomously, adapt to new information, and achieve specific objectives.",
+        "timestamp": "09-07-2026 06:17:59 PM"
+    }
+]

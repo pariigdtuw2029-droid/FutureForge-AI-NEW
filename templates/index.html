@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Voice Recorder</title>
+</head>
+
+<body>
+
+<h2>🎤 AI Interview Voice Recorder</h2>
+
+<button id="start">Start Recording</button>
+<button id="stop" disabled>Stop Recording</button>
+
+<br><br>
+
+<audio id="player" controls></audio>
+
+<script>
+
+let recorder;
+let chunks = [];
+
+const startBtn = document.getElementById("start");
+const stopBtn = document.getElementById("stop");
+
+startBtn.onclick = async () => {
+
+    const stream =
+        await navigator.mediaDevices.getUserMedia({
+            audio:true
+        });
+
+    recorder = new MediaRecorder(stream);
+
+    chunks = [];
+
+    recorder.ondataavailable = e => {
+
+        chunks.push(e.data);
+
+    };
+
+    recorder.onstop = async () => {
+
+        const blob = new Blob(chunks,{
+            type:"audio/webm"
+        });
+
+        document.getElementById("player").src =
+            URL.createObjectURL(blob);
+
+        const form = new FormData();
+
+        form.append(
+            "audio",
+            blob,
+            "recording.webm"
+        );
+
+        const response = await fetch(
+            "http://127.0.0.1:8000/upload-recording",
+            {
+                method:"POST",
+                body:form
+            }
+        );
+
+        const result = await response.json();
+
+        console.log(result);
+
+        alert("Recording uploaded successfully!");
+
+    };
+
+    recorder.start();
+
+    startBtn.disabled = true;
+    stopBtn.disabled = false;
+
+};
+
+stopBtn.onclick = () => {
+
+    recorder.stop();
+
+    startBtn.disabled = false;
+    stopBtn.disabled = true;
+
+};
+
+</script>
+
+</body>
+
+</html>

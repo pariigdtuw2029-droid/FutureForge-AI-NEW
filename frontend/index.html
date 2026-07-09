@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>AI Voice Recorder</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+margin:40px;
+
+}
+
+button{
+
+padding:10px;
+
+margin:10px;
+
+}
+
+audio{
+
+display:block;
+
+margin-top:20px;
+
+width:400px;
+
+}
+
+pre{
+
+background:#eee;
+
+padding:10px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>AI Voice Recorder</h2>
+
+<button id="start">
+
+🎤 Start Recording
+
+</button>
+
+<button id="stop" disabled>
+
+⏹ Stop Recording
+
+</button>
+
+<button id="upload" disabled>
+
+Upload Recording
+
+</button>
+
+<br>
+
+<audio id="player" controls></audio>
+
+<h3>Server Response</h3>
+
+<pre id="response"></pre>
+
+<script>
+
+let recorder;
+
+let chunks=[];
+
+let audioBlob;
+
+const start=document.getElementById("start");
+
+const stop=document.getElementById("stop");
+
+const upload=document.getElementById("upload");
+
+const player=document.getElementById("player");
+
+const response=document.getElementById("response");
+
+start.onclick=async()=>{
+
+const stream=await navigator.mediaDevices.getUserMedia({
+
+audio:true
+
+});
+
+recorder=new MediaRecorder(stream);
+
+chunks=[];
+
+recorder.ondataavailable=e=>{
+
+chunks.push(e.data);
+
+};
+
+recorder.onstop=()=>{
+
+audioBlob=new Blob(
+
+chunks,
+
+{
+
+type:"audio/webm"
+
+}
+
+);
+
+player.src=URL.createObjectURL(audioBlob);
+
+upload.disabled=false;
+
+};
+
+recorder.start();
+
+start.disabled=true;
+
+stop.disabled=false;
+
+};
+
+stop.onclick=()=>{
+
+recorder.stop();
+
+start.disabled=false;
+
+stop.disabled=true;
+
+};
+
+upload.onclick=async()=>{
+
+const formData=new FormData();
+
+formData.append(
+
+"question",
+
+"Tell me about yourself."
+
+);
+
+formData.append(
+
+"audio",
+
+audioBlob,
+
+"recording.webm"
+
+);
+
+const res=await fetch(
+
+"http://127.0.0.1:8000/voice-interview",
+
+{
+
+method:"POST",
+
+body:formData
+
+}
+
+);
+
+const data=await res.json();
+
+response.textContent=JSON.stringify(
+
+data,
+
+null,
+
+4
+
+);
+
+};
+
+</script>
+
+</body>
+
+</html>
