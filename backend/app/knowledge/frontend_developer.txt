@@ -1,0 +1,53 @@
+Role: Frontend Developer Intern
+
+Overview:
+A Frontend Developer Intern is expected to build responsive, interactive user interfaces and connect them with APIs. The role values HTML/CSS/JavaScript fundamentals, React or modern frontend frameworks, UI thinking, and clean component-based implementation.
+
+Required Skills:
+- HTML
+- CSS
+- JavaScript
+- React.js
+- Responsive design
+- DOM understanding
+- Component-based UI development
+- API integration / fetching data from backend
+- Git / GitHub
+- Debugging in browser / dev tools
+- Basic state management concepts
+- Basic UI/UX awareness
+
+Preferred Skills:
+- Next.js
+- Tailwind CSS / Bootstrap / CSS frameworks
+- TypeScript
+- Routing in React
+- Form handling and validation
+- Authentication flow on frontend
+- Performance optimization basics
+- Reusable component design
+- State management libraries (Redux / Zustand / Context API)
+- Framer Motion / animations
+- Accessibility basics
+- Testing basics for frontend
+
+Expected Projects / Portfolio Signals:
+- Responsive portfolio website
+- E-commerce frontend
+- Dashboard UI with charts / analytics cards
+- Authentication-based app frontend
+- Social media / chat app frontend
+- Job portal / internship portal frontend
+- AI tool frontend that interacts with an API
+- Multi-page React app with routing and state handling
+
+Good Evidence in Resume:
+- Live deployed frontend projects
+- GitHub repos with React apps
+- Projects that mention responsiveness, API integration, forms, state management
+
+Common Skill Gaps:
+- Knows HTML/CSS but no React project
+- Only static pages, no real app logic
+- No API integration
+- UI skills listed but projects don’t show complexity

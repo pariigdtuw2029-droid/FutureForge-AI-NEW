@@ -1,0 +1,86 @@
+Role: Frontend Developer Learning Roadmap
+
+Overview:
+This roadmap is for students targeting Frontend Developer internships. The goal is to become strong in modern UI development, React, API integration, and building polished responsive applications.
+
+Recommended Learning Progression:
+
+Phase 1: Frontend Fundamentals
+Focus Skills:
+- HTML
+- CSS
+- JavaScript
+- responsive design
+
+Topics:
+- semantic HTML
+- flexbox and grid
+- responsive layouts
+- DOM manipulation
+- JS fundamentals
+- events, functions, arrays, objects
+
+Deliverables:
+- Build responsive landing pages
+- Build a small JavaScript interactive app
+
+Phase 2: React and App Development
+Focus Skills:
+- React
+- component-based design
+- state and props
+- routing
+- API integration
+
+Topics:
+- React components
+- hooks basics
+- state management basics
+- fetching API data
+- forms and validation
+- React Router
+
+Deliverables:
+- Build a multi-page React app
+- Build an app that consumes an API
+
+Phase 3: Frontend Portfolio and Product Polish
+Focus Skills:
+- reusable UI components
+- authentication flow basics
+- performance and polish
+- deployment
+
+Topics:
+- reusable component architecture
+- frontend auth flow
+- loading/error states
+- UI polish and animations basics
+- deployment on Vercel / Netlify
+- project README and screenshots
+
+Deliverables:
+- Build one polished frontend app with API integration
+- Deploy at least one React project publicly
+
+Recommended Project Ideas:
+- Internship / Job Portal Frontend
+- E-commerce Frontend
+- Resume Analyzer Frontend Dashboard
+- AI Chat Interface
+- Finance / Expense Dashboard
+- Social Media Feed UI
+- Habit / Productivity App
+
+Priority Concepts for Intern Readiness:
+- HTML/CSS/JS fundamentals
+- React
+- responsive design
+- API integration
+- one polished deployed frontend project
+
+Common Weaknesses to Fix:
+- only static pages, no real app behavior
+- no React
+- weak responsiveness
+- poor API integration / state handling

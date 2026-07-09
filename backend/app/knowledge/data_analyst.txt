@@ -1,0 +1,49 @@
+Role: Data Analyst Intern
+
+Overview:
+A Data Analyst Intern is expected to work with structured data, clean and analyze datasets, derive insights, build dashboards, and communicate findings. The role strongly values SQL, spreadsheets, visualization, and analytical thinking.
+
+Required Skills:
+- SQL
+- Excel / spreadsheets
+- Python or R for data analysis
+- pandas
+- Data cleaning and preprocessing
+- Exploratory Data Analysis (EDA)
+- Data visualization
+- Basic statistics
+- Ability to summarize insights clearly
+- Business problem understanding
+- Reporting and dashboard thinking
+
+Preferred Skills:
+- Power BI / Tableau
+- Matplotlib / Seaborn / Plotly
+- A/B testing basics
+- KPI and business metric understanding
+- Data storytelling
+- Google Sheets / BI workflows
+- Basic machine learning awareness
+- ETL basics
+- Dashboard design best practices
+
+Expected Projects / Portfolio Signals:
+- Sales dashboard / revenue analysis project
+- Customer churn or retention analysis
+- E-commerce / marketing data analysis project
+- HR analytics / employee attrition analysis
+- Movie / sports / finance dataset analysis
+- SQL + dashboard project
+- End-to-end EDA report with visualizations and business insights
+- Tableau / Power BI dashboard linked in portfolio
+
+Good Evidence in Resume:
+- Projects mention cleaning, analysis, dashboards, insights, KPIs
+- SQL queries or dashboard tools explicitly listed
+- Strong analytical project descriptions, not just “used Python”
+
+Common Skill Gaps:
+- Candidate knows Python but lacks SQL
+- Dashboard tools not present
+- Projects are ML-heavy but not insight-focused
+- No business interpretation / insight communication shown
