@@ -1,0 +1,51 @@
+Role: Backend Developer Intern
+
+Overview:
+A Backend Developer Intern is expected to design and build server-side logic, APIs, database interactions, and core application functionality. The role values API development, databases, authentication, and understanding of scalable backend systems.
+
+Required Skills:
+- Strong programming in one backend language (Python / Java / JavaScript / Go etc.)
+- Backend framework knowledge (FastAPI / Flask / Django / Express / Spring Boot etc.)
+- REST API development
+- SQL and database fundamentals
+- CRUD operations
+- Authentication / authorization basics
+- Git / GitHub
+- Debugging and error handling
+- Request-response lifecycle understanding
+- Data validation / schema thinking
+
+Preferred Skills:
+- NoSQL databases
+- ORMs / query builders
+- Docker
+- Caching basics (Redis)
+- Background jobs / queues basics
+- WebSockets / real-time backend
+- Cloud deployment basics
+- CI/CD basics
+- API documentation tools
+- Rate limiting / security basics
+- Microservices awareness
+- Logging / monitoring basics
+
+Expected Projects / Portfolio Signals:
+- REST API project with authentication
+- Blog / task manager backend
+- E-commerce backend with cart/orders/users
+- Resume/job portal backend
+- Chat app backend using WebSockets
+- AI application backend serving model or LLM responses
+- Backend with PostgreSQL / MongoDB integration
+- Properly structured API project with routes, models, services, and environment configs
+
+Good Evidence in Resume:
+- Projects mention APIs, auth, DB schema, backend frameworks
+- GitHub repos with server code
+- Use of Postman, FastAPI/Express, SQL databases
+
+Common Skill Gaps:
+- Knows language but no backend framework project
+- No DB integration
+- No authentication or production-style API work
+- Backend listed but only toy projects exist

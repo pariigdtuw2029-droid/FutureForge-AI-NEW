@@ -1,0 +1,54 @@
+Role: Software Engineer / Software Development Intern
+
+Overview:
+A Software Engineer Intern is expected to build, debug, test, and maintain software systems. The role generally values strong programming fundamentals, DSA/problem-solving, clean coding practices, and project experience involving real applications or systems.
+
+Required Skills:
+- Strong programming in at least one language such as Python, Java, C++, or JavaScript
+- Data Structures and Algorithms
+- OOP concepts
+- Problem solving and debugging
+- Git / GitHub
+- Basic database knowledge (SQL)
+- Understanding of APIs
+- Basic software development lifecycle understanding
+- Ability to read, write, and modify code in a team setting
+- Basic understanding of operating systems / computer science fundamentals
+
+Preferred Skills:
+- Web development basics (frontend or backend exposure)
+- REST APIs
+- Node.js / Java Spring Boot / Python backend frameworks
+- Database design basics
+- Unit testing basics
+- Linux / command line familiarity
+- System design basics for intern level
+- CI/CD basics
+- Docker basics
+- Cloud basics
+- Authentication / authorization basics
+- Caching basics
+- WebSockets / real-time app basics
+
+Expected Projects / Portfolio Signals:
+- Full-stack web application
+- Chat application / collaboration app
+- Task manager / productivity app
+- E-commerce clone / booking app
+- API-based project with backend + database
+- Authentication-enabled application
+- Real-time app using sockets
+- A project showing CRUD + database integration
+- A larger project with proper folder structure, README, and deployment
+
+Good Evidence in Resume:
+- Projects showing backend + DB + APIs
+- DSA practice / coding profile links
+- Internship experience involving feature development, bug fixing, or production code
+- GitHub repositories with non-trivial codebases
+
+Common Skill Gaps:
+- Strong skills section but only very basic projects
+- No database or API work
+- DSA not reflected anywhere
+- Resume claims “software development” but projects are incomplete clones without engineering depth

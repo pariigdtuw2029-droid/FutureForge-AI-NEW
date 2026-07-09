@@ -1,0 +1,80 @@
+Role: Data Analyst Learning Roadmap
+
+Overview:
+This roadmap is for students targeting Data Analyst internships. The goal is to become strong in SQL, spreadsheets, Python/pandas analysis, dashboarding, and business-oriented data storytelling.
+
+Recommended Learning Progression:
+
+Phase 1: Data Handling and Analysis Foundation
+Focus Skills:
+- SQL
+- Excel / spreadsheets
+- pandas
+- data cleaning
+
+Topics:
+- SELECT, WHERE, GROUP BY, ORDER BY
+- joins and aggregations
+- Excel formulas and pivot tables
+- pandas filtering, grouping, null handling
+- CSV analysis workflow
+
+Deliverables:
+- Solve SQL practice problems
+- Complete one mini analysis notebook
+
+Phase 2: EDA + Visualization + Business Thinking
+Focus Skills:
+- EDA
+- visualization
+- metrics interpretation
+- storytelling
+
+Topics:
+- trends, distributions, correlations
+- dashboards and chart selection
+- KPI thinking
+- summarizing findings
+- presenting insights clearly
+
+Deliverables:
+- Build an EDA project with visualizations and insight summary
+- Create a dashboard or reporting-style output
+
+Phase 3: Portfolio Projects and Dashboarding
+Focus Skills:
+- Tableau / Power BI
+- end-to-end data project
+- business insights communication
+
+Topics:
+- dashboard creation
+- SQL + dashboard workflow
+- cleaning + analysis + presentation pipeline
+- framing business questions from datasets
+
+Deliverables:
+- Build one dashboard project
+- Build one SQL + Python + dashboard project
+
+Recommended Project Ideas:
+- Sales Performance Dashboard
+- Customer Churn Analysis
+- HR Analytics Dashboard
+- Marketing Campaign Analysis
+- E-commerce Revenue and Retention Analysis
+- IPL / Sports Analytics Dashboard
+
+Priority Concepts for Intern Readiness:
+- SQL
+- pandas
+- data cleaning
+- EDA
+- dashboarding
+- insight communication
+
+Common Weaknesses to Fix:
+- too much ML focus but weak analytics storytelling
+- no SQL
+- no dashboard tool exposure
+- no business-oriented conclusions in projects
