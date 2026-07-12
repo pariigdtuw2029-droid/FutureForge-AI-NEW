@@ -1,156 +1,40 @@
-import os
-from dotenv import load_dotenv
+import json
+import asyncio
 from google import genai
 
-load_dotenv()
+from app.core.config import settings
 
-api_key = os.getenv("GEMINI_API_KEY")
-
-if not api_key:
-    raise ValueError("GEMINI_API_KEY not found in .env file")
-
-client = genai.Client(api_key=api_key)
+client = genai.Client(api_key=settings.GEMINI_API_KEY)
 
 
-def ask_gemini(prompt: str) -> str:
-    """
-    Sends a prompt to Gemini AI and returns the response.
-    If Gemini is unavailable, returns a meaningful fallback message.
-    """
+async def generate_ai_response(prompt: str) -> dict:
 
-    try:
+    MAX_RETRIES = 3
 
-        response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
-            contents=prompt
-        )
-
-        if response and response.text:
-            return response.text.strip()
-
-        return fallback_response(prompt)
-
-    except Exception as e:
-
-        error = str(e)
-
-        print("\n" + "=" * 60)
-        print("GEMINI API ERROR")
-        print(error)
-        print("=" * 60 + "\n")
-
-        # -----------------------------
-        # Quota Exceeded
-        # -----------------------------
-        if "429" in error or "RESOURCE_EXHAUSTED" in error:
-
-            return (
-                "⚠ Gemini API free quota has been exceeded.\n\n"
-                "Please wait about one minute and try again.\n"
-                "If the problem continues, create a new Gemini API key "
-                "or upgrade your API quota."
+    for attempt in range(MAX_RETRIES):
+        try:
+            response = client.models.generate_content(
+                model="gemini-2.5-flash",
+                contents=prompt,
             )
 
-        # -----------------------------
-        # Invalid API Key
-        # -----------------------------
-        elif "API_KEY" in error or "authentication" in error.lower():
+            text = response.text.strip()
 
-            return (
-                "⚠ Invalid Gemini API Key.\n\n"
-                "Please check your .env file."
-            )
+            text = text.replace("```json", "")
+            text = text.replace("```", "")
+            text = text.strip()
 
-        # -----------------------------
-        # Network Error
-        # -----------------------------
-        elif "connection" in error.lower():
+            return json.loads(text)
 
-            return (
-                "⚠ Unable to connect to Gemini.\n\n"
-                "Please check your internet connection."
-            )
+        except Exception as e:
 
-        # -----------------------------
-        # Unknown Error
-        # -----------------------------
-        else:
+            print(f"Gemini Error (Attempt {attempt+1}):", e)
 
-            return (
-                "⚠ Gemini API Error\n\n"
-                f"{error}"
-            )
+            if "503" in str(e) and attempt < MAX_RETRIES - 1:
+                print("Retrying in 5 seconds...")
+                await asyncio.sleep(5)
+                continue
 
-
-def fallback_response(prompt: str) -> str:
-    """
-    Offline fallback responses when Gemini is unavailable.
-    """
-
-    prompt_lower = prompt.lower()
-
-    # -------------------------------------------------
-    # Interview Evaluation Fallback
-    # -------------------------------------------------
-
-    if (
-        "candidate answer" in prompt_lower
-        or "overall score" in prompt_lower
-        or "evaluate" in prompt_lower
-    ):
-
-        return """
-Overall Score: 40/100
-
-Technical Knowledge: 3/10
-
-Communication Skills: 4/10
-
-Confidence: 2/10
-
-Strengths:
-- Attempted to answer the question.
-
-Weaknesses:
-- Technical concepts are missing.
-- Explanation lacks clarity.
-
-Suggestions:
-- Revise the core concepts.
-- Practice coding interviews.
-- Support answers with examples.
-
-Ideal Answer:
-A strong answer should clearly explain the concept, include practical examples, discuss trade-offs, and demonstrate real-world understanding.
-"""
-
-    # -------------------------------------------------
-    # Interview Question Generation Fallback
-    # -------------------------------------------------
-
-    if "generate exactly one interview question" in prompt_lower:
-
-        return (
-            "⚠ Gemini AI is temporarily unavailable.\n\n"
-            "Please wait a minute and try again."
-        )
-
-    # -------------------------------------------------
-    # Resume Analysis Fallback
-    # -------------------------------------------------
-
-    if "resume" in prompt_lower:
-
-        return (
-            "Resume analysis is temporarily unavailable because "
-            "Gemini AI could not be reached."
-        )
-
-    # -------------------------------------------------
-    # Generic Fallback
-    # -------------------------------------------------
-
-    return (
-        "Gemini AI is temporarily unavailable.\n"
-        "Please try again shortly."
-    )
+            return {
+                "error": str(e)
+            }

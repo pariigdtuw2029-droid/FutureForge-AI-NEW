@@ -1,23 +1,5 @@
-# Python
-__pycache__/
-*.pyc
-
-# Virtual environment
 venv/
-
-# Environment
+__pycache__/
 .env
-
-# VS Code
-.vscode/
-
-# OS files
-.DS_Store
-
-# Local data
-recordings/
 uploads/
-.history/
-
-# Chroma database
-backend/app/chroma_db/
+*.pyc
