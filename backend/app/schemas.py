@@ -1,4 +1,6 @@
 from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel
+
 
 
 # -------------------------
@@ -49,3 +51,29 @@ class MentorResponse(BaseModel):
     strengths: list[str]
     weaknesses: list[str]
     recommendations: list[str]
+class ProjectRequest(BaseModel):
+    skills: str
+    career_goal: str
+    interests: str
+    preferred_domain: str
+    experience_level: str
+class InternshipRequest(BaseModel):
+    skills: str
+    cgpa: float
+    location: str
+    preferred_role: str
+    preferred_company: str
+    preferred_domain: str
+    expected_stipend: str
+    availability: str
+
+
+class InternshipRequest(BaseModel):
+    skills: str
+    cgpa: float
+    location: str
+    preferred_role: str
+    preferred_company: str
+    preferred_domain: str
+    expected_stipend: str
+    availability: str
