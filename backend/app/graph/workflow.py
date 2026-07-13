@@ -3,228 +3,50 @@ from langgraph.graph import (
     END
 )
 
-
 from app.graph.state import CareerState
 
-
-from app.graph.nodes import (
-
-    resume_agent,
-
-    skill_gap_agent,
-
-    learning_planner_agent,
-
-    project_architect_agent,
-
-    interview_coach_agent,
-
-    memory_agent,
-
-    mentor_agent,
-
-)
+from app.services.career_ai_agent import career_ai_agent
+from app.services.guidance_agent import guidance_agent
+from app.services.oppurtunity_agent import opportunity_agent
 
 
-
-def route_after_resume(
-        state: CareerState
-):
-
-    if state.get("error"):
-
-        return "end"
-
-
-    if not state.get(
-        "resume_info"
-    ):
-
-        return "end"
-
-
-    return "skill_gap"
-
-
-
-
-def route_after_skill_gap(
-        state: CareerState
-):
-
-    if state.get("error"):
-
-        return "end"
-
-
-    skill_gap = state.get(
-        "skill_gap"
-    )
-
-
-    if not skill_gap:
-
-        return "end"
-
-
-    required = skill_gap.get(
-        "missing_required_skills",
-        []
-    )
-
-
-    preferred = skill_gap.get(
-        "missing_preferred_skills",
-        []
-    )
-
-
-    if (
-        len(required)==0
-        and
-        len(preferred)==0
-    ):
-
-        return "project_architect"
-
-
-
-    return "learning_planner"
-
-
-
-
-workflow = StateGraph(
-    CareerState
-)
-
-
+workflow = StateGraph(CareerState)
 
 # Nodes
-
 workflow.add_node(
-    "resume",
-    resume_agent
+    "career_ai",
+    career_ai_agent
 )
 
-
 workflow.add_node(
-    "skill_gap",
-    skill_gap_agent
+    "guidance",
+    guidance_agent
 )
 
-
 workflow.add_node(
-    "learning_planner",
-    learning_planner_agent
+    "opportunity",
+    opportunity_agent
 )
 
-
-workflow.add_node(
-    "project_architect",
-    project_architect_agent
-)
-
-
-workflow.add_node(
-    "interview_coach",
-    interview_coach_agent
-)
-
-
-workflow.add_node(
-    "memory",
-    memory_agent
-)
-
-
-workflow.add_node(
-    "mentor",
-    mentor_agent
-)
-
-
-
-# Start
-
+# Entry
 workflow.set_entry_point(
-    "resume"
+    "career_ai"
 )
 
-
-
-# Decision flow
-
-workflow.add_conditional_edges(
-
-    "resume",
-
-    route_after_resume,
-
-    {
-
-        "skill_gap":
-        "skill_gap",
-
-        "end":
-        END
-    }
-
+# Flow
+workflow.add_edge(
+    "career_ai",
+    "guidance"
 )
-
-
-
-workflow.add_conditional_edges(
-
-    "skill_gap",
-
-    route_after_skill_gap,
-
-    {
-
-        "learning_planner":
-        "learning_planner",
-
-        "project_architect":
-        "project_architect",
-
-        "end":
-        END
-    }
-
-)
-
-
 
 workflow.add_edge(
-    "learning_planner",
-    "project_architect"
+    "guidance",
+    "opportunity"
 )
 
-
 workflow.add_edge(
-    "project_architect",
-    "interview_coach"
-)
-
-
-workflow.add_edge(
-    "interview_coach",
-    "memory"
-)
-
-
-workflow.add_edge(
-    "memory",
-    "mentor"
-)
-
-
-workflow.add_edge(
-    "mentor",
+    "opportunity",
     END
 )
-
-
 
 graph = workflow.compile()

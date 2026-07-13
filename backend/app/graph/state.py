@@ -35,3 +35,13 @@ class CareerState(TypedDict, total=False):
 
     # final status
     error: Optional[str]
+
+    # Opportunity Agent
+    internship_request: Optional[Any]
+    project_request: Optional[Any]
+
+    internship_result: Optional[dict[str, Any]]
+    project_result: Optional[dict[str, Any]]
+
+    # Final report
+    final_report: Optional[dict[str, Any]]
