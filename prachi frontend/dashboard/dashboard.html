@@ -1,0 +1,2731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI HelpDesk Agent | Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <meta name="description" content="Your AI HelpDesk Agent dashboard — resume score, skill gaps, learning roadmap, and project recommendations in one place.">
+    <meta name="theme-color" content="#06142b">
+
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="background" aria-hidden="true">
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+</div>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" type="button" aria-label="Collapse sidebar" aria-expanded="true">
+            <i class="fa-solid fa-angles-left" aria-hidden="true"></i>
+        </button>
+
+        <div class="logo">
+
+            <div class="logo-icon" aria-hidden="true">
+                AI
+            </div>
+
+            <div>
+
+                <h2>AI HelpDesk</h2>
+
+                <p>Career Assistant</p>
+
+            </div>
+
+        </div>
+
+        <ul class="menu" aria-label="Dashboard sections">
+
+            <li class="active" data-section="home" role="button" tabindex="0" aria-current="page">
+
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+
+                <span class="menu-label">Dashboard</span>
+
+            </li>
+
+            <li data-section="resume" role="button" tabindex="0">
+
+                <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+
+                <span class="menu-label">Resume Analyzer</span>
+
+            </li>
+
+            <li data-section="skill" role="button" tabindex="0">
+
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+
+                <span class="menu-label">Skill Gap</span>
+
+            </li>
+
+            <li data-section="learning" role="button" tabindex="0">
+
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+
+                <span class="menu-label">Learning Planner</span>
+
+            </li>
+
+       <li data-section="projects" role="button" tabindex="0">
+
+    <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+
+    <span class="menu-label">Project Architect</span>
+
+</li>
+
+            <li data-section="interview" role="button" tabindex="0">
+
+                <i class="fa-solid fa-microphone" aria-hidden="true"></i>
+
+                <span class="menu-label">Mock Interview</span>
+
+            </li>
+          <li data-section="internship" role="button" tabindex="0">
+
+    <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+
+    <span class="menu-label">Internship Recommendation</span>
+
+</li>
+<li data-section="workflow" role="button" tabindex="0">
+
+    <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+
+    <span class="menu-label">LangGraph Workflow</span>
+
+</li>
+            <li data-section="memory" role="button" tabindex="0">
+
+                <i class="fa-solid fa-brain" aria-hidden="true"></i>
+
+                <span class="menu-label">Memory</span>
+
+            </li>
+
+            <li data-section="mentor" role="button" tabindex="0">
+
+                <i class="fa-solid fa-robot" aria-hidden="true"></i>
+
+                <span class="menu-label">AI Mentor</span>
+
+            </li>
+
+            <li data-section="settings" role="button" tabindex="0">
+
+                <i class="fa-solid fa-gear" aria-hidden="true"></i>
+
+                <span class="menu-label">Settings</span>
+
+            </li>
+
+        </ul>
+
+        <p class="menu-empty" id="menuEmptyState" hidden>No sections match your search.</p>
+
+        <button class="logout-btn" type="button">
+
+            <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+
+            <span class="logout-label">Logout</span>
+
+        </button>
+
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+    <!-- Main -->
+
+    <main class="main-content" id="main-content">
+
+        <header class="topbar">
+
+            <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" type="button" aria-label="Open menu" aria-expanded="false">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+
+                <label for="dashboardSearch" class="sr-only">Search dashboard sections</label>
+
+                <input
+                    id="dashboardSearch"
+                    type="text"
+                    placeholder="Search anything...">
+
+            </div>
+
+            <div class="top-right">
+
+    <div class="notification-wrap">
+
+        <button class="notification" id="notifBell" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Notifications">
+
+            <i class="fa-regular fa-bell" aria-hidden="true"></i>
+
+        </button>
+
+        <div class="notification-panel" id="notifPanel" hidden>
+
+            <div class="notification-panel-head">Notifications</div>
+
+            <div class="notification-empty">
+                <i class="fa-regular fa-bell-slash" aria-hidden="true"></i>
+                <p>You're all caught up</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="profile">
+
+        <div class="avatar" id="userAvatar" aria-hidden="true">
+            U
+        </div>
+
+        <div>
+
+            <h4 id="userName">User Name</h4>
+
+            <p id="userRole">AI HelpDesk Agent</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</header>
+
+        <!-- HOME PAGE -->
+
+        <section id="home" class="content-page active">
+
+            <div class="welcome">
+
+                <div>
+
+                    <h1>
+
+                        Welcome back, <span id="welcomeName">there</span>
+                        <span aria-hidden="true">👋</span>
+
+                    </h1>
+
+<p>
+Your intelligent career assistant for resume analysis,
+skill development, project recommendations,
+AI mentoring and mock interviews.
+</p>
+
+                </div>
+
+                <button class="primary-btn" id="viewReportBtn" type="button">
+
+                    View Report
+
+                </button>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon pink">
+
+                        <i class="fa-solid fa-file-circle-check" aria-hidden="true"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Resume Score
+
+                    </h3>
+
+                    <h2>
+
+                        88%
+
+                    </h2>
+
+                    <span>
+
+                        ATS Optimized
+
+                    </span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+
+                        <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Career Health
+
+                    </h3>
+
+                    <h2>
+
+                        Good
+
+                    </h2>
+
+                    <span>
+
+                        Growing Fast
+
+                    </span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+
+                        <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Career Progress
+
+                    </h3>
+
+                    <h2>
+
+                        63%
+
+                    </h2>
+
+                    <span>
+
+                        Keep Improving
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="glass-card">
+
+                <div class="card-title">
+                    <h2>Quick Actions</h2>
+                </div>
+
+                <div class="quick-actions-grid">
+
+                    <button type="button" class="quick-action-btn" data-goto-section="resume">
+                        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                        <span>Analyze Resume</span>
+                    </button>
+
+                    <button type="button" class="quick-action-btn" data-goto-section="interview">
+                        <i class="fa-solid fa-microphone" aria-hidden="true"></i>
+                        <span>Start Interview</span>
+                    </button>
+
+                    <button type="button" class="quick-action-btn" data-goto-section="learning">
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                        <span>Learning Plan</span>
+                    </button>
+
+                    <button type="button" class="quick-action-btn" data-goto-section="internship">
+                        <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                        <span>Find Internship</span>
+                    </button>
+
+                    <button type="button" class="quick-action-btn" data-goto-section="mentor">
+                        <i class="fa-solid fa-robot" aria-hidden="true"></i>
+                        <span>AI Mentor</span>
+                    </button>
+
+                    <button type="button" class="quick-action-btn" data-goto-section="projects">
+                        <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                        <span>Generate Project</span>
+                    </button>
+
+                </div>
+
+            </div>
+                        <div class="dashboard-bottom">
+
+                <!-- Left Section -->
+
+                <div class="left-column">
+
+                    <div class="glass-card">
+
+                        <div class="card-title">
+
+                            <h2>Technical Skills</h2>
+
+                            <a href="#" id="viewAllSkillsLink">View All</a>
+
+                        </div>
+
+                        <div class="skills">
+
+                            <span>Python</span>
+
+                            <span>Machine Learning</span>
+
+                            <span>FastAPI</span>
+
+                            <span>HTML</span>
+
+                            <span>CSS</span>
+
+                            <span>JavaScript</span>
+
+                            <span>SQL</span>
+
+                            <span>Git</span>
+
+                            <span>TensorFlow</span>
+
+                            <span>LangGraph</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="glass-card">
+
+                        <div class="card-title">
+
+                            <h2>Today's Goals</h2>
+
+                        </div>
+
+                        <div class="goal">
+
+                            <div class="goal-item">
+
+                                <span>Resume Analysis</span>
+
+                                <div class="progress">
+                                    <div class="progress-fill fill90"></div>
+                                </div>
+                            </div>
+
+                            <div class="goal-item">
+
+                                <span>Practice Interview</span>
+
+                                <div class="progress">
+                                    <div class="progress-fill fill70"></div>
+                                </div>
+                            </div>
+
+                            <div class="goal-item">
+
+                                <span>Complete AI Project</span>
+
+                                <div class="progress">
+                                    <div class="progress-fill fill40"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="glass-card">
+
+                        <div class="card-title">
+
+                            <h2>Career Progress Trend</h2>
+
+                            <span class="chart-legend-tag">Last 6 weeks</span>
+
+                        </div>
+
+                        <div class="chart-wrap">
+                            <canvas id="progressTrendChart" role="img" aria-label="Line chart showing career readiness score trending from 58% six weeks ago to 81% this week"></canvas>
+                        </div>
+
+                    </div>
+
+                    <div class="glass-card" id="mentorReportCard">
+
+                        <div class="card-title">
+
+                            <h2>AI Mentor Report</h2>
+
+                        </div>
+
+                        <p class="mentor-text">
+
+                            Based on your current profile,
+your resume is ATS friendly.
+
+Priority Improvements:
+
+• Strengthen DSA
+
+• Build 3 AI Projects
+
+• Learn Docker & Deployment
+
+• Practice Technical Interviews
+
+Estimated Placement Readiness:
+
+81%
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Right Section -->
+
+                <div class="right-column">
+
+                    <div class="glass-card">
+
+                        <div class="card-title">
+
+                            <h2>Skill Readiness</h2>
+
+                        </div>
+
+                        <div class="chart-wrap chart-wrap-doughnut">
+                            <canvas id="skillReadinessChart" role="img" aria-label="Doughnut chart: 63 percent career readiness, 37 percent remaining"></canvas>
+                            <div class="chart-center-label">
+                                <strong id="skillReadinessValue">63%</strong>
+                                <span>Ready</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="glass-card">
+
+                        <div class="card-title">
+
+                            <h2>Recent Projects</h2>
+
+                        </div>
+
+                        <div class="project-card-item">
+
+                            <h3>AI HelpDesk Agent</h3>
+
+                            <p>Career Guidance Platform</p>
+
+                            <div class="progress">
+
+                                <div class="progress-fill fill80"></div>
+
+                            </div>
+
+                            <small>80% Completed</small>
+
+                        </div>
+
+                        <div class="project-card-item">
+
+                            <h3>Resume Analyzer</h3>
+
+                            <p>ATS + AI Resume Review</p>
+
+                            <div class="progress">
+
+                                <div class="progress-fill fill55"></div>
+
+                            </div>
+
+                            <small>55% Completed</small>
+
+                        </div>
+
+                        <div class="project-card-item">
+
+                            <h3>Mock Interview AI</h3>
+
+                            <p>Voice Based Interview Agent</p>
+
+                            <div class="progress">
+
+                                <div class="progress-fill fill35"></div>
+
+                            </div>
+
+                            <small>35% Completed</small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="glass-card workflow">
+
+                        <div class="card-title">
+
+                            <h2>LangGraph Workflow</h2>
+
+                        </div>
+
+                        <div class="flow">
+
+                            <div class="flow-box">Resume</div>
+
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+                            <div class="flow-box">Skill Gap</div>
+
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+                            <div class="flow-box">Learning</div>
+
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+                            <div class="flow-box">Projects</div>
+
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+                            <div class="flow-box">Interview</div>
+
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+                            <div class="flow-box">Memory</div>
+
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+                            <div class="flow-box">Mentor</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="dashboard-bottom">
+
+                <div class="glass-card">
+
+                    <div class="card-title">
+                        <h2>Skill Distribution</h2>
+                    </div>
+
+                    <div class="chart-wrap">
+                        <canvas id="skillDistributionChart" role="img" aria-label="Radar chart comparing proficiency across Python, React, SQL, System Design, and Communication"></canvas>
+                    </div>
+
+                </div>
+
+                <div class="glass-card">
+
+                    <div class="card-title">
+                        <h2>Weekly Activity</h2>
+                        <span class="chart-legend-tag">This week</span>
+                    </div>
+
+                    <div class="chart-wrap">
+                        <canvas id="weeklyActivityChart" role="img" aria-label="Bar chart of AI agent sessions per day this week"></canvas>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="glass-card">
+
+                <div class="card-title">
+                    <h2>Achievements</h2>
+                </div>
+
+                <div class="badge-row">
+
+                    <div class="achievement-badge earned">
+                        <i class="fa-solid fa-file-circle-check" aria-hidden="true"></i>
+                        <span>First Resume Analyzed</span>
+                    </div>
+
+                    <div class="achievement-badge earned">
+                        <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                        <span>Skill Gap Identified</span>
+                    </div>
+
+                    <div class="achievement-badge earned">
+                        <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                        <span>First Project Blueprint</span>
+                    </div>
+
+                    <div class="achievement-badge">
+                        <i class="fa-solid fa-microphone" aria-hidden="true"></i>
+                        <span>Mock Interview Ace</span>
+                    </div>
+
+                    <div class="achievement-badge">
+                        <i class="fa-solid fa-fire" aria-hidden="true"></i>
+                        <span>7-Day Streak</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="glass-card">
+
+                <div class="card-title">
+                    <h2>Recent Activity</h2>
+                </div>
+
+                <div id="recentActivityList" class="activity-list">
+
+                    <div class="activity-item">
+                        <div class="activity-icon"><i class="fa-solid fa-circle-info" aria-hidden="true"></i></div>
+                        <div>
+                            <p>No activity yet — actions across the dashboard will show up here.</p>
+                            <span class="activity-time">Just now</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Resume Analyzer -->
+
+       <section id="resume" class="content-page">
+
+    <div class="page-heading">
+        <h1>Resume Analyzer</h1>
+        <p>Analyze your resume for your target job role using AI.</p>
+    </div>
+
+    <!-- Upload Resume -->
+
+    <div class="upload-card" id="uploadDropzone">
+
+        <i class="fa-solid fa-cloud-arrow-up upload-icon" aria-hidden="true"></i>
+
+        <h2>Upload Your Resume</h2>
+
+        <p>Drag and drop your PDF here, or browse from your device (max 5MB)</p>
+
+        <label for="resumeFile" class="sr-only">Upload resume PDF</label>
+
+        <input type="file" id="resumeFile" accept=".pdf,application/pdf" hidden>
+
+        <button class="primary-btn" id="uploadResume" type="button">
+
+            Browse Files
+
+        </button>
+
+        <div class="upload-file-chip" id="uploadFileChip" hidden>
+
+            <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+
+            <span id="uploadFileName">resume.pdf</span>
+
+            <span id="uploadFileSize" class="upload-file-size"></span>
+
+            <button type="button" class="upload-file-remove" id="uploadFileRemove" aria-label="Remove uploaded resume">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Job Role -->
+
+    <div class="glass-card">
+
+        <h2>Select Job Role</h2>
+
+        <label for="resumeRole" class="sr-only">Target job role</label>
+
+        <select id="resumeRole" class="role-dropdown">
+
+            <option>AI Engineer</option>
+
+            <option>Machine Learning Engineer</option>
+
+            <option>Software Engineer</option>
+
+            <option>Backend Developer</option>
+
+            <option>Data Scientist</option>
+
+            <option>Full Stack Developer</option>
+
+        </select>
+
+        <button class="primary-btn" id="analyzeResume" type="button" disabled>
+
+            Analyze Resume
+
+        </button>
+
+        <p class="field-hint-dark" id="analyzeHint">Upload a resume above to enable analysis.</p>
+
+    </div>
+
+    <!-- Resume Score -->
+
+    <div class="glass-card">
+
+        <h2>Role Fit Score</h2>
+
+        <div class="score-circle" id="scoreCircle" style="--score:91" role="img" aria-label="Role fit score: 91 percent">
+
+            <div class="score-value" id="scoreValue">
+
+                91%
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Strengths -->
+
+    <div class="candidate-grid">
+
+        <div class="candidate-box">
+
+            <h3>Strengths</h3>
+
+            <div class="skills" id="strengthsList">
+
+                <span>Python</span>
+
+                <span>FastAPI</span>
+
+                <span>TensorFlow</span>
+
+                <span>Git</span>
+
+                <span>HTML</span>
+
+            </div>
+
+        </div>
+
+        <div class="candidate-box">
+
+            <h3>Weaknesses</h3>
+
+            <div class="skills" id="weaknessesList">
+
+                <span>System Design</span>
+
+                <span>Docker</span>
+
+                <span>AWS</span>
+
+            </div>
+
+        </div>
+
+        <div class="candidate-box">
+
+            <h3>Missing Keywords</h3>
+
+            <div class="skills" id="missingKeywordsList">
+
+                <span>Kubernetes</span>
+
+                <span>CI/CD</span>
+
+                <span>Microservices</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- AI Summary -->
+
+    <div class="glass-card">
+
+        <h2>AI Resume Summary</h2>
+
+        <p id="aiSummaryText">
+
+            Your resume demonstrates strong programming and AI fundamentals.
+            Adding cloud technologies, deployment experience,
+            quantified project achievements, and system design concepts
+            will significantly improve your resume for this role.
+
+        </p>
+
+    </div>
+
+    <!-- Analysis Report -->
+
+    <div class="glass-card">
+
+        <h2>Analysis Report</h2>
+
+        <div class="goal">
+
+            <div class="goal-item">
+
+                <div class="goal-item-head">
+                    <strong>ATS Compatibility</strong>
+                    <span class="goal-percent" id="atsPercentLabel">90%</span>
+                </div>
+
+                <div class="progress" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="ATS Compatibility">
+
+                    <div class="progress-fill" id="atsProgress" style="width:90%"></div>
+
+                </div>
+
+            </div>
+
+            <div class="goal-item">
+
+                <div class="goal-item-head">
+                    <strong>Technical Skills Match</strong>
+                    <span class="goal-percent" id="skillsPercentLabel">80%</span>
+                </div>
+
+                <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Technical Skills Match">
+
+                    <div class="progress-fill" id="skillsProgress" style="width:80%"></div>
+
+                </div>
+
+            </div>
+
+            <div class="goal-item">
+
+                <div class="goal-item-head">
+                    <strong>Project Quality</strong>
+                    <span class="goal-percent" id="projectPercentLabel">70%</span>
+                </div>
+
+                <div class="progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Project Quality">
+
+                    <div class="progress-fill" id="projectProgress" style="width:70%"></div>
+
+                </div>
+
+            </div>
+
+            <div class="goal-item">
+
+                <div class="goal-item-head">
+                    <strong>Overall Resume Quality</strong>
+                    <span class="goal-percent" id="overallPercentLabel">90%</span>
+                </div>
+
+                <div class="progress" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Overall Resume Quality">
+
+                    <div class="progress-fill" id="overallProgress" style="width:90%"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="primary-btn" id="downloadReport" type="button">
+
+            Download Analysis Report
+
+        </button>
+
+    </div>
+
+</section>
+                <!-- Skill Gap -->
+
+        <section id="skill" class="content-page">
+
+    <div class="page-heading">
+        <h1>Skill Gap Analysis</h1>
+        <p>Analyze your skills against your dream job role using AI.</p>
+    </div>
+
+    <!-- Job Role -->
+
+    <div class="glass-card">
+
+        <h2>Select Target Job Role</h2>
+
+        <label for="jobRole" class="sr-only">Target job role</label>
+
+        <select id="jobRole" class="role-dropdown">
+
+            <option>AI Engineer</option>
+
+            <option>Machine Learning Engineer</option>
+
+            <option>Software Engineer</option>
+
+            <option>Data Scientist</option>
+
+            <option>Backend Developer</option>
+
+            <option>Full Stack Developer</option>
+
+        </select>
+
+        <button class="primary-btn" id="analyzeSkill" type="button">
+
+            Analyze Skill Gap
+
+        </button>
+
+    </div>
+
+    <!-- Skills -->
+
+    <div class="candidate-grid">
+
+        <div class="candidate-box">
+
+            <h3>Current Skills</h3>
+
+            <div class="skill-input-row">
+
+                <label for="newSkillInput" class="sr-only">Add a skill</label>
+
+                <input type="text" id="newSkillInput" placeholder="Add a skill (e.g. Docker)">
+
+                <button type="button" class="chip-add-btn" id="addSkillBtn" aria-label="Add skill">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+
+            </div>
+
+            <div class="skills" id="currentSkillsList"></div>
+
+        </div>
+
+        <div class="candidate-box">
+
+            <h3>Matched Skills</h3>
+
+            <div class="skills" id="matchedSkillsList">
+
+                <span>Python</span>
+
+                <span>Git</span>
+
+                <span>HTML</span>
+
+            </div>
+
+        </div>
+
+        <div class="candidate-box">
+
+            <h3>Missing Skills</h3>
+
+            <div class="skills" id="missingSkillsList">
+
+                <span>Docker</span>
+
+                <span>AWS</span>
+
+                <span>Kubernetes</span>
+
+                <span>System Design</span>
+
+            </div>
+
+        </div>
+
+        <div class="candidate-box">
+
+            <h3>Partially Known Skills</h3>
+
+            <div class="skills" id="partialSkillsList">
+
+                <span>TensorFlow</span>
+
+                <span>FastAPI</span>
+
+                <span>SQL</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Score -->
+
+    <div class="glass-card">
+
+        <h2>Skill Gap Score</h2>
+
+        <div class="score-circle" id="skillScoreCircle" style="--score:78" role="img" aria-label="Skill gap readiness score: 78 percent">
+
+            <div class="score-value" id="skillScoreValue">
+
+                78%
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Summary -->
+
+    <div class="glass-card">
+
+        <h2>AI Fit Summary</h2>
+
+        <p id="skillFitSummary">
+
+            You have a strong programming foundation and good web development
+            skills. To become industry-ready for the selected role, focus on
+            Docker, Cloud Computing, System Design, Advanced Machine Learning,
+            and Interview Preparation.
+
+        </p>
+
+        <button class="primary-btn" id="goToLearningPlanner" type="button">
+
+            Generate Learning Roadmap
+
+        </button>
+
+    </div>
+
+</section>
+
+        <!-- Learning Planner -->
+
+      <section id="learning" class="content-page">
+
+    <div class="page-heading">
+        <h1>Learning Planner</h1>
+        <p>Your personalized AI roadmap to become job-ready.</p>
+    </div>
+
+    <!-- Selected Role -->
+
+    <div class="glass-card">
+
+        <h2>Target Job Role</h2>
+
+        <div class="skills" id="learningTargetRoleWrap">
+
+            <span id="learningTargetRole">AI Engineer</span>
+
+        </div>
+
+        <p class="field-hint-dark" id="learningRoleSource">Run a Skill Gap analysis first for a plan tailored to your actual gaps, or generate a default roadmap below.</p>
+
+    </div>
+
+    <!-- Priority Skills -->
+
+    <div class="glass-card">
+
+        <h2>Priority Skills</h2>
+
+        <div class="candidate-grid">
+
+            <div class="candidate-box">
+
+                <h3>High Priority</h3>
+
+                <div class="skills" id="highPrioritySkills">
+
+                    <span>Docker</span>
+                    <span>AWS</span>
+                    <span>System Design</span>
+
+                </div>
+
+            </div>
+
+            <div class="candidate-box">
+
+                <h3>Medium Priority</h3>
+
+                <div class="skills" id="mediumPrioritySkills">
+
+                    <span>TensorFlow</span>
+                    <span>SQL</span>
+
+                </div>
+
+            </div>
+
+            <div class="candidate-box">
+
+                <h3>Low Priority</h3>
+
+                <div class="skills" id="lowPrioritySkills">
+
+                    <span>GitHub Actions</span>
+                    <span>Linux</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Weekly Roadmap -->
+
+    <div class="glass-card">
+
+        <h2>Week-wise Learning Roadmap</h2>
+
+        <div class="goal" id="weeklyRoadmapList">
+
+            <div class="goal-item">
+
+                <strong>Week 1</strong>
+
+                <span>Docker + Linux Basics</span>
+
+            </div>
+
+            <div class="goal-item">
+
+                <strong>Week 2</strong>
+
+                <span>AWS Fundamentals</span>
+
+            </div>
+
+            <div class="goal-item">
+
+                <strong>Week 3</strong>
+
+                <span>System Design + SQL</span>
+
+            </div>
+
+            <div class="goal-item">
+
+                <strong>Week 4</strong>
+
+                <span>Build AI Deployment Project</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Recommended Resources -->
+
+    <div class="glass-card">
+
+        <h2>Recommended Learning Resources</h2>
+
+        <div class="candidate-grid" id="learningResourcesList">
+
+            <div class="candidate-box">
+
+                <h3>Docker</h3>
+
+                <p>Docker Official Documentation</p>
+
+            </div>
+
+            <div class="candidate-box">
+
+                <h3>AWS</h3>
+
+                <p>AWS Skill Builder</p>
+
+            </div>
+
+            <div class="candidate-box">
+
+                <h3>System Design</h3>
+
+                <p>System Design Primer</p>
+
+            </div>
+
+            <div class="candidate-box">
+
+                <h3>SQL</h3>
+
+                <p>SQLBolt</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Timeline -->
+
+    <div class="glass-card">
+
+        <h2>Estimated Timeline</h2>
+
+        <div class="goal-item-head">
+            <strong>Current readiness</strong>
+            <span class="goal-percent" id="timelineReadinessLabel">63%</span>
+        </div>
+
+        <div class="progress" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" aria-label="Current readiness before completing this roadmap">
+
+            <div class="progress-fill" id="timelineProgress" style="width:63%"></div>
+
+        </div>
+
+        <p style="margin-top:20px;">
+
+            Estimated Completion Time:
+            <strong id="timelineWeeksText">8 Weeks</strong>
+
+        </p>
+
+    </div>
+
+    <!-- Final Plan -->
+
+    <div class="glass-card">
+
+        <h2>Final Action Plan</h2>
+
+        <p id="finalActionPlanText">
+
+            Complete all high-priority skills first,
+            finish one deployment project,
+            solve DSA regularly,
+            practice mock interviews every week,
+            and update your resume after completing the roadmap.
+
+        </p>
+
+        <button class="primary-btn" id="generateRoadmap" type="button">
+
+            Generate New Learning Plan
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- workflow-->
+ <section id="workflow" class="content-page">
+
+    <div class="page-heading">
+
+        <h1>LangGraph Orchestrator</h1>
+
+        <p>
+            Coordinate all AI agents into one intelligent workflow and generate a unified AI Career Report.
+        </p>
+
+    </div>
+
+    <!-- Workflow Pipeline -->
+
+    <div class="glass-card">
+
+        <div class="card-title">
+            <h2>AI Workflow Pipeline</h2>
+            <span class="chart-legend-tag" id="workflowPipelineTag">0 / 7 complete</span>
+        </div>
+
+        <div class="workflow-container">
+
+            <div class="flow-box" data-agent="resume">
+                <span class="flow-icon">📄</span>
+                <h3>Resume</h3>
+                <p>Extract Candidate Data</p>
+                <span class="flow-status" data-flow-status>Waiting</span>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <div class="flow-box" data-agent="skill">
+                <span class="flow-icon">📊</span>
+                <h3>Skill Gap</h3>
+                <p>Analyze Missing Skills</p>
+                <span class="flow-status" data-flow-status>Waiting</span>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <div class="flow-box" data-agent="learning">
+                <span class="flow-icon">📚</span>
+                <h3>Learning Planner</h3>
+                <p>Create Roadmap</p>
+                <span class="flow-status" data-flow-status>Waiting</span>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <div class="flow-box" data-agent="projects">
+                <span class="flow-icon">💻</span>
+                <h3>Project Architect</h3>
+                <p>Recommend Projects</p>
+                <span class="flow-status" data-flow-status>Waiting</span>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <div class="flow-box" data-agent="interview">
+                <span class="flow-icon">🎤</span>
+                <h3>Interview Coach</h3>
+                <p>Mock Interview</p>
+                <span class="flow-status" data-flow-status>Waiting</span>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <div class="flow-box" data-agent="memory">
+                <span class="flow-icon">🧠</span>
+                <h3>Memory Agent</h3>
+                <p>Store User Progress</p>
+                <span class="flow-status" data-flow-status>Waiting</span>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <div class="flow-box" data-agent="mentor">
+                <span class="flow-icon">🤖</span>
+                <h3>AI Mentor</h3>
+                <p>Career Guidance</p>
+                <span class="flow-status" data-flow-status>Waiting</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Agent Status -->
+
+    <div class="glass-card">
+
+        <h2>AI Agent Status</h2>
+
+        <div class="candidate-grid" id="workflowStatusGrid">
+
+            <div class="candidate-box" data-agent="resume">
+                <h3>Resume Agent</h3>
+                <span class="status pending" data-status-badge>Waiting</span>
+                <p data-status-detail>Analyze a resume to begin.</p>
+            </div>
+
+            <div class="candidate-box" data-agent="skill">
+                <h3>Skill Gap</h3>
+                <span class="status pending" data-status-badge>Waiting</span>
+                <p data-status-detail>Run a skill gap analysis.</p>
+            </div>
+
+            <div class="candidate-box" data-agent="learning">
+                <h3>Learning Planner</h3>
+                <span class="status pending" data-status-badge>Waiting</span>
+                <p data-status-detail>Generate a learning roadmap.</p>
+            </div>
+
+            <div class="candidate-box" data-agent="projects">
+                <h3>Projects</h3>
+                <span class="status pending" data-status-badge>Waiting</span>
+                <p data-status-detail>Save a project blueprint.</p>
+            </div>
+
+            <div class="candidate-box" data-agent="interview">
+                <h3>Interview</h3>
+                <span class="status pending" data-status-badge>Waiting</span>
+                <p data-status-detail>Complete a mock interview.</p>
+            </div>
+
+            <div class="candidate-box" data-agent="memory">
+                <h3>Memory</h3>
+                <span class="status pending" data-status-badge>Waiting</span>
+                <p data-status-detail>Save your career memory.</p>
+            </div>
+
+            <div class="candidate-box" data-agent="mentor">
+                <h3>Mentor</h3>
+                <span class="status pending" data-status-badge>Waiting</span>
+                <p data-status-detail>Generate an AI mentor report.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Career Report -->
+
+    <div class="glass-card">
+
+        <h2>Unified AI Career Report</h2>
+
+        <p>
+
+            The LangGraph Orchestrator combines outputs from all AI agents
+            into one comprehensive career report including resume analysis,
+            skill gap analysis, personalized learning roadmap,
+            recommended projects, interview performance,
+            memory insights, and AI mentor recommendations.
+
+        </p>
+
+        <div class="progress">
+
+            <div class="progress-fill" id="workflowProgressFill" style="width:0%"></div>
+
+        </div>
+
+        <p style="margin-top:20px;">
+            Overall Career Readiness:
+            <strong id="workflowReadinessValue">0%</strong>
+        </p>
+
+        <label for="unifiedReportOutput" class="sr-only">Unified AI career report</label>
+
+        <textarea
+            id="unifiedReportOutput"
+            rows="12"
+            placeholder="Click &quot;Generate Unified Career Report&quot; to combine every agent's results into one report..."
+            readonly></textarea>
+
+    </div>
+
+    <!-- Buttons -->
+
+    <div class="glass-card">
+
+        <h2>Actions</h2>
+
+        <button class="primary-btn" id="generateCareerReport" type="button">
+
+            <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+            Generate Unified Career Report
+
+        </button>
+
+        <button class="primary-btn secondary-btn" id="downloadCareerReport" type="button" style="margin-left:15px;">
+
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
+            Download Report
+
+        </button>
+
+    </div>
+
+</section>
+
+        <!-- Interview -->
+
+       <section id="interview" class="content-page">
+
+    <div class="page-heading">
+
+        <h1>AI Interview Coach</h1>
+
+        <p>Practice AI-powered mock interviews and improve your performance.</p>
+
+    </div>
+
+    <!-- Job Role & Difficulty -->
+
+    <div class="glass-card">
+
+        <h2>Interview Setup</h2>
+
+        <label for="interviewRole">Job Role</label>
+
+        <select id="interviewRole" class="role-dropdown">
+
+            <option>AI Engineer</option>
+            <option>Machine Learning Engineer</option>
+            <option>Software Engineer</option>
+            <option>Backend Developer</option>
+            <option>Data Scientist</option>
+
+        </select>
+
+        <label for="difficultyLevel" style="margin-top:20px;display:block;">Difficulty</label>
+
+        <select id="difficultyLevel" class="role-dropdown">
+
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
+
+        </select>
+
+        <button class="primary-btn" id="startInterview" type="button">
+
+            Start Interview
+
+        </button>
+
+    </div>
+
+    <!-- Question -->
+
+    <div class="glass-card" id="interviewQuestionCard" hidden>
+
+        <div class="card-title">
+            <h2>Interview Question</h2>
+            <span class="chart-legend-tag" id="interviewProgressText">Question 1 of 2</span>
+        </div>
+
+        <p id="questionText">
+
+            Click "Start Interview" to generate your first interview question.
+
+        </p>
+
+    </div>
+
+    <!-- Candidate Answer -->
+
+    <div class="glass-card" id="interviewAnswerCard" hidden>
+
+        <h2>Your Answer</h2>
+
+        <p class="field-hint-dark">Type your answer, or use the microphone to answer out loud — your speech will be transcribed here automatically.</p>
+
+        <label for="candidateAnswer" class="sr-only">Your answer</label>
+
+        <textarea
+            id="candidateAnswer"
+            rows="8"
+            placeholder="Type your answer here, or click the microphone to speak..."
+            class="answer-box"></textarea>
+
+        <div class="interview-answer-actions">
+
+            <button class="mic-btn" id="micRecordBtn" type="button" aria-pressed="false">
+                <i class="fa-solid fa-microphone" aria-hidden="true"></i>
+                Record Answer
+            </button>
+
+            <span id="voiceStatus" class="field-hint-dark" role="status" aria-live="polite"></span>
+
+        </div>
+
+        <button class="primary-btn" id="submitAnswer" type="button">
+
+            Submit Answer
+
+        </button>
+
+    </div>
+
+    <!-- Scores -->
+
+    <div class="candidate-grid" id="interviewScoresCard" hidden>
+
+        <div class="candidate-box">
+
+            <h3>Overall Score</h3>
+
+            <div class="score-circle" id="interviewScoreCircle" style="--score:0" role="img" aria-label="Overall answer score">
+
+                <div class="score-value" id="interviewScoreValue">
+
+                    0%
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="candidate-box">
+
+            <h3>Technical</h3>
+
+            <div class="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Technical score">
+
+                <div class="progress-fill" id="technicalProgress" style="width:0%"></div>
+
+            </div>
+
+        </div>
+
+        <div class="candidate-box">
+
+            <h3>Communication</h3>
+
+            <div class="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Communication score">
+
+                <div class="progress-fill" id="communicationProgress" style="width:0%"></div>
+
+            </div>
+
+        </div>
+
+        <div class="candidate-box">
+
+            <h3>Confidence</h3>
+
+            <div class="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Confidence score">
+
+                <div class="progress-fill" id="confidenceProgress" style="width:0%"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Feedback -->
+
+    <div class="glass-card" id="interviewFeedbackCard" hidden>
+
+        <h2>AI Feedback</h2>
+
+        <h3 style="color:#ff4fd8;">Strengths</h3>
+
+        <ul id="interviewStrengthsList"></ul>
+
+        <h3 style="color:#ff4fd8;margin-top:20px;">Weaknesses</h3>
+
+        <ul id="interviewWeaknessesList"></ul>
+
+        <h3 style="color:#ff4fd8;margin-top:20px;">Suggestions</h3>
+
+        <p id="interviewSuggestionsText"></p>
+
+    </div>
+
+    <!-- Ideal Answer -->
+
+    <div class="glass-card" id="idealAnswerCard" hidden>
+
+        <h2>Ideal Answer</h2>
+
+        <p id="idealAnswerText">
+
+            After evaluation, the AI will display an ideal answer for comparison.
+
+        </p>
+
+    </div>
+
+    <div class="glass-card action-card" id="interviewNextCard" hidden>
+
+        <button class="primary-btn" id="interviewNextBtn" type="button">
+
+            Next Question
+
+        </button>
+
+    </div>
+
+    <!-- Final Interview Report -->
+
+    <div class="glass-card" id="finalReportCard" hidden>
+
+        <h2>Final Interview Report</h2>
+
+        <p id="finalReportSummary"></p>
+
+        <div class="chart-wrap">
+            <canvas id="finalReportChart" role="img" aria-label="Bar chart of technical, communication, and confidence averages across the interview"></canvas>
+        </div>
+
+        <h3 class="subhead">Strengths</h3>
+        <ul class="feature-list" id="finalStrengthsList"></ul>
+
+        <h3 class="subhead">Weaknesses</h3>
+        <ul class="feature-list" id="finalWeaknessesList"></ul>
+
+        <h3 class="subhead">Improvement Suggestions</h3>
+        <ul class="feature-list" id="finalSuggestionsList"></ul>
+
+        <button class="primary-btn" id="saveInterviewReport" type="button">
+
+            <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+            Save Interview Report
+
+        </button>
+
+    </div>
+
+    <!-- Interview History -->
+
+    <div class="glass-card">
+
+        <h2>Interview History</h2>
+
+        <div id="interviewHistory">
+
+            <div class="history-item">
+
+                <h3>No Interviews Yet</h3>
+
+                <p>
+                    Your completed mock interviews will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- Mentor -->
+
+       <!-- ===========================
+        AI MENTOR
+=========================== -->
+
+<section id="mentor" class="content-page">
+
+    <div class="page-heading">
+
+        <h1>AI Mentor</h1>
+
+        <p>
+            Your always-on AI career coach — synthesizes your resume, skill gap, learning progress, projects, and interview results into one personalized growth plan.
+        </p>
+
+    </div>
+
+    <!-- Career Snapshot -->
+
+    <div class="glass-card">
+
+        <div class="card-title">
+            <h2>Career Snapshot</h2>
+            <span class="chart-legend-tag" id="mentorTargetRoleTag">Target: AI/ML Engineer</span>
+        </div>
+
+        <div class="candidate-grid" id="mentorSnapshotGrid">
+
+            <div class="candidate-box">
+                <h3>Career Health</h3>
+                <div class="score-circle" id="mentorScoreCircle" style="--score:0" role="img" aria-label="Overall career health score">
+                    <div class="score-value" id="mentorScoreValue">0%</div>
+                </div>
+            </div>
+
+            <div class="candidate-box">
+                <h3>Resume Score</h3>
+                <p id="mentorResumeScore">Not analyzed yet</p>
+            </div>
+
+            <div class="candidate-box">
+                <h3>Skill Readiness</h3>
+                <p id="mentorSkillScore">Not analyzed yet</p>
+            </div>
+
+            <div class="candidate-box">
+                <h3>Interview Average</h3>
+                <p id="mentorInterviewScore">No interviews yet</p>
+            </div>
+
+            <div class="candidate-box">
+                <h3>Projects Saved</h3>
+                <p id="mentorProjectCount">0 completed</p>
+            </div>
+
+            <div class="candidate-box">
+                <h3>Internship Matches</h3>
+                <p id="mentorInternshipCount">Not generated yet</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Career Growth Radar -->
+
+    <div class="glass-card">
+
+        <h2>Career Growth Radar</h2>
+        <p class="field-hint-dark">A live picture of where you stand across every AI agent you've used — the more you use each tool, the more accurate this gets.</p>
+
+        <div class="chart-wrap">
+            <canvas id="mentorRadarChart" role="img" aria-label="Radar chart of resume, skills, interview, projects, and internship readiness"></canvas>
+        </div>
+
+    </div>
+
+    <!-- Strengths & Improvement -->
+
+    <div class="two-col-grid">
+
+        <div class="glass-card">
+
+            <h2>Strengths</h2>
+
+            <ul class="mentor-list" id="mentorStrengthsList">
+                <li>✔ Add a skill, resume, or interview result to see your strengths here.</li>
+            </ul>
+
+        </div>
+
+        <div class="glass-card">
+
+            <h2>Areas for Improvement</h2>
+
+            <ul class="mentor-list" id="mentorImprovementsList">
+                <li>• Use the other AI agents so your mentor has data to work with.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Ask Your Mentor -->
+
+    <div class="glass-card">
+
+        <h2>Ask Your Mentor</h2>
+        <p class="field-hint-dark">Ask a quick career question, or tap a suggestion below.</p>
+
+        <div class="skills" id="mentorSuggestedQuestions">
+            <span data-mentor-question="What should I focus on next?">What should I focus on next?</span>
+            <span data-mentor-question="Am I ready for interviews?">Am I ready for interviews?</span>
+            <span data-mentor-question="How is my resume looking?">How is my resume looking?</span>
+            <span data-mentor-question="What projects should I build?">What projects should I build?</span>
+        </div>
+
+        <label for="mentorQuestionInput" class="sr-only">Ask your mentor a question</label>
+
+        <textarea
+            id="mentorQuestionInput"
+            rows="3"
+            placeholder="Type a career question for your AI mentor..."></textarea>
+
+        <button class="primary-btn" id="askMentorBtn" type="button">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            Ask Mentor
+        </button>
+
+        <div class="glass-card" id="mentorAnswerCard" hidden>
+            <h3 style="color:#ff4fd8;">Mentor's Answer</h3>
+            <p id="mentorAnswerText"></p>
+        </div>
+
+    </div>
+
+    <!-- Full Report -->
+
+    <div class="glass-card">
+
+        <div class="card-title">
+            <h2>Personalized AI Recommendations</h2>
+            <span class="chart-legend-tag" id="mentorReportUpdatedTag" hidden>Updated just now</span>
+        </div>
+
+        <p class="field-hint-dark">Generates a full narrative report from everything your mentor knows about your career so far.</p>
+
+        <label for="mentorReport" class="sr-only">AI mentor report</label>
+
+        <textarea
+            id="mentorReport"
+            rows="10"
+            placeholder="Your AI mentor recommendations will appear here..."
+            readonly></textarea>
+
+        <button
+            class="primary-btn"
+            id="generateMentorReport"
+            type="button">
+
+            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+            Generate AI Mentor Report
+
+        </button>
+
+        <button
+            class="primary-btn secondary-btn"
+            id="saveMentorReport"
+            type="button">
+
+            <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+            Save Report
+
+        </button>
+
+    </div>
+
+    <!-- Mentor Report History -->
+
+    <div class="glass-card">
+
+        <h2>Mentor Report History</h2>
+
+        <div id="mentorHistory">
+
+            <div class="history-item">
+                <h3>No Reports Yet</h3>
+                <p>Your saved AI mentor reports will appear here.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ===========================
+        MEMORY AGENT
+=========================== -->
+
+<section id="memory" class="content-page">
+
+    <div class="page-header">
+
+        <h1>Memory Agent</h1>
+
+        <p>
+            Store and retrieve your career profile to provide personalized AI recommendations across all AI agents.
+        </p>
+
+    </div>
+
+    <div class="glass-card">
+
+        <h2>Career Memory</h2>
+
+        <div class="candidate-grid">
+
+            <div class="candidate-box">
+                <h3>Skills</h3>
+                <p>Python, Machine Learning, FastAPI</p>
+            </div>
+
+            <div class="candidate-box">
+                <h3>Career Goal</h3>
+                <p>AI Engineer</p>
+            </div>
+
+            <div class="candidate-box">
+                <h3>Projects</h3>
+                <p>5 Completed</p>
+            </div>
+
+            <div class="candidate-box">
+                <h3>Resume Score</h3>
+                <p>88 / 100</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="glass-card">
+
+        <h2>Stored Career Profile</h2>
+
+        <textarea
+            id="memoryProfile"
+            rows="8"
+            placeholder="Your saved career profile will appear here..."
+            readonly></textarea>
+
+    </div>
+
+    <div class="glass-card">
+
+        <h2>Memory Actions</h2>
+
+        <button class="primary-btn" id="saveMemory">
+
+            Save Career Memory
+
+        </button>
+
+        <button class="primary-btn" id="retrieveMemory">
+
+            Retrieve Memory
+
+        </button>
+
+    </div>
+
+</section>
+<!-- =====================================================
+                    PROJECT ARCHITECT AGENT
+====================================================== -->
+
+<section id="projects" class="content-page">
+
+    <div class="page-header">
+
+        <h1>Project Architect Agent</h1>
+
+        <p>
+            Get a complete, personalized project blueprint — from tech stack and
+            database design to deployment and a learning roadmap — based on your
+            skills, career goal, interests, domain, and experience level.
+        </p>
+
+    </div>
+
+    <!-- Input Section: Project Input Form -->
+
+    <div class="glass-card">
+
+        <h2>Project Input Form</h2>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label for="projectSkills">Current Skills</label>
+
+                <textarea
+                    id="projectSkills"
+                    rows="4"
+                    placeholder="Example: Python, Machine Learning, FastAPI, SQL"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="careerGoal">Career Goal</label>
+
+                <input
+                    type="text"
+                    id="careerGoal"
+                    placeholder="Example: AI Engineer">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="projectInterests">Interests (Optional)</label>
+
+                <textarea
+                    id="projectInterests"
+                    rows="3"
+                    placeholder="Example: Computer Vision, NLP, Web Development"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="projectDomain">Preferred Domain</label>
+
+                <select id="projectDomain">
+
+                    <option>Web Development</option>
+                    <option>AI / Machine Learning</option>
+                    <option>Data Science</option>
+                    <option>Mobile App Development</option>
+                    <option>Cybersecurity</option>
+                    <option>Cloud &amp; DevOps</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="projectExperience">Experience Level</label>
+
+                <select id="projectExperience">
+
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <button class="primary-btn" id="generateProjects" type="button">
+
+            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+            Generate Project Recommendation
+
+        </button>
+
+    </div>
+
+    <!-- Project Recommendation Page -->
+
+    <div class="glass-card">
+
+        <h2>Recommended Projects</h2>
+
+        <p class="field-hint-dark">Select one to generate its complete architecture.</p>
+
+        <div id="projectRecommendations" class="project-option-grid">
+
+            <div class="project-card">
+
+                <h3>No Recommendations Yet</h3>
+
+                <p>
+                    Fill in the form above and click "Generate Project Recommendation"
+                    to receive AI-powered project ideas for your domain.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Project Details Page: Overview -->
+
+    <div class="glass-card" id="projectOverviewCard" hidden>
+
+        <div class="card-title">
+            <h2 id="projectTitleText">Project Title</h2>
+            <span class="difficulty-badge" id="projectDifficultyBadge">Beginner</span>
+        </div>
+
+        <p class="field-hint-dark" id="projectDurationText">Estimated Duration: —</p>
+
+        <h3 class="subhead">Problem Statement</h3>
+        <p id="projectProblemText"></p>
+
+        <h3 class="subhead">Project Description</h3>
+        <p id="projectDescriptionText"></p>
+
+        <h3 class="subhead">Project Features</h3>
+        <ul class="feature-list" id="projectFeaturesList"></ul>
+
+    </div>
+
+    <!-- Technology Stack Page -->
+
+    <div class="glass-card" id="techStackCard" hidden>
+
+        <h2>Technology Stack</h2>
+
+        <h3 class="subhead">Frontend</h3>
+        <div id="techFrontend" class="badge-container"></div>
+
+        <h3 class="subhead">Backend</h3>
+        <div id="techBackend" class="badge-container"></div>
+
+        <h3 class="subhead">Database</h3>
+        <div id="techDatabase" class="badge-container"></div>
+
+    </div>
+
+    <!-- Database Design Page -->
+
+    <div class="glass-card" id="databaseDesignCard" hidden>
+
+        <h2>Database Design</h2>
+
+        <div class="candidate-grid" id="dbTablesList"></div>
+
+    </div>
+
+    <!-- Folder Structure -->
+
+    <div class="glass-card" id="folderStructureCard" hidden>
+
+        <h2>Folder Structure</h2>
+
+        <pre class="code-block"><code id="folderStructureText"></code></pre>
+
+    </div>
+
+    <!-- API Documentation Page -->
+
+    <div class="glass-card" id="apiEndpointsCard" hidden>
+
+        <h2>API Endpoints</h2>
+
+        <div class="api-table" id="apiEndpointsList"></div>
+
+    </div>
+
+    <!-- GitHub Repository Structure -->
+
+    <div class="glass-card" id="repoStructureCard" hidden>
+
+        <h2>GitHub Repository Structure</h2>
+
+        <pre class="code-block"><code id="repoStructureText"></code></pre>
+
+    </div>
+
+    <!-- Deployment Guide -->
+
+    <div class="glass-card" id="deploymentGuideCard" hidden>
+
+        <h2>Deployment Guide</h2>
+
+        <ol class="step-list" id="deploymentStepsList"></ol>
+
+    </div>
+
+    <!-- Learning Roadmap Page -->
+
+    <div class="glass-card" id="projectRoadmapCard" hidden>
+
+        <h2>Learning Roadmap</h2>
+
+        <div class="goal" id="projectRoadmapWeeks"></div>
+
+    </div>
+
+    <!-- Learning Resources -->
+
+    <div class="glass-card" id="learningResourcesCard" hidden>
+
+        <h2>Learning Resources</h2>
+
+        <div class="candidate-grid" id="projectResourcesList"></div>
+
+    </div>
+
+    <!-- Resume Value & Future Scope -->
+
+    <div class="glass-card" id="resumeValueCard" hidden>
+
+        <h2>Resume Value</h2>
+
+        <p id="resumeValueText"></p>
+
+        <h3 class="subhead">Future Scope</h3>
+        <ul class="feature-list" id="futureScopeList"></ul>
+
+    </div>
+
+    <div class="glass-card action-card" id="saveProjectCard" hidden>
+
+        <button class="primary-btn" id="saveProject" type="button">
+
+            <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+            Save Project
+
+        </button>
+
+    </div>
+
+    <!-- Project History Page -->
+
+    <div class="glass-card">
+
+        <h2>Project History</h2>
+
+        <div id="projectHistory">
+
+            <div class="history-item">
+
+                <h3>No Saved Projects</h3>
+
+                <p>
+                    Your previously saved project blueprints will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================================
+                INTERNSHIP RECOMMENDATION AGENT
+====================================================== -->
+
+<section id="internship" class="content-page">
+
+    <div class="page-header">
+
+        <h1>Internship Recommendation Agent</h1>
+
+        <p>
+            Get AI-matched internships based on your resume, skills, CGPA, and
+            preferences — with a match score, missing skills, and learning
+            resources for each one.
+        </p>
+
+    </div>
+
+    <!-- Internship Input Form -->
+
+    <div class="glass-card">
+
+        <h2>Internship Input Form</h2>
+
+        <div class="upload-card" id="internshipUploadDropzone">
+
+            <i class="fa-solid fa-cloud-arrow-up upload-icon" aria-hidden="true"></i>
+
+            <h2>Upload Your Resume (Optional)</h2>
+
+            <p>Drag and drop your PDF here, or browse from your device (max 5MB)</p>
+
+            <label for="internshipResumeFile" class="sr-only">Upload resume PDF (optional)</label>
+
+            <input type="file" id="internshipResumeFile" accept=".pdf,application/pdf" hidden>
+
+            <button class="primary-btn" id="internshipUploadBtn" type="button">
+
+                Browse Files
+
+            </button>
+
+            <div class="upload-file-chip" id="internshipFileChip" hidden>
+
+                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+
+                <span id="internshipFileName">resume.pdf</span>
+
+                <span id="internshipFileSize" class="upload-file-size"></span>
+
+                <button type="button" class="upload-file-remove" id="internshipFileRemove" aria-label="Remove uploaded resume">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label for="internshipSkills">Current Skills</label>
+
+                <textarea
+                    id="internshipSkills"
+                    rows="4"
+                    placeholder="Example: Python, SQL, Machine Learning, FastAPI"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="internshipCgpa">CGPA</label>
+
+                <input
+                    type="number"
+                    id="internshipCgpa"
+                    min="0"
+                    max="10"
+                    step="0.01"
+                    placeholder="Example: 8.2">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="internshipRole">Preferred Role</label>
+
+                <select id="internshipRole">
+
+                    <option>AI Engineer</option>
+                    <option>Machine Learning Engineer</option>
+                    <option>Software Engineer</option>
+                    <option>Backend Developer</option>
+                    <option>Data Scientist</option>
+                    <option>Full Stack Developer</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="internshipCompany">Preferred Company</label>
+
+                <select id="internshipCompany">
+
+                    <option>No Preference</option>
+                    <option>Google</option>
+                    <option>Microsoft</option>
+                    <option>Amazon</option>
+                    <option>Infosys</option>
+                    <option>TCS</option>
+                    <option>Startup</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="internshipDomain">Preferred Domain</label>
+
+                <select id="internshipDomain">
+
+                    <option>Web Development</option>
+                    <option>AI / Machine Learning</option>
+                    <option>Data Science</option>
+                    <option>Mobile App Development</option>
+                    <option>Cybersecurity</option>
+                    <option>Cloud &amp; DevOps</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="internshipLocation">Preferred Location</label>
+
+                <input
+                    type="text"
+                    id="internshipLocation"
+                    placeholder="Example: Bengaluru, Remote">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="internshipStipend">Expected Stipend (₹/month)</label>
+
+                <input
+                    type="number"
+                    id="internshipStipend"
+                    min="0"
+                    step="500"
+                    placeholder="Example: 15000">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="internshipAvailability">Availability</label>
+
+                <select id="internshipAvailability">
+
+                    <option>Immediately</option>
+                    <option>Within 1 Month</option>
+                    <option>Within 2 Months</option>
+                    <option>Part-Time</option>
+                    <option>Full-Time</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <button class="primary-btn" id="generateInternship" type="button">
+
+            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+            Generate Internship Recommendations
+
+        </button>
+
+    </div>
+
+    <!-- Internship Summary -->
+
+    <div class="glass-card" id="internshipSummaryCard" hidden>
+
+        <h2>Internship Summary</h2>
+
+        <p id="internshipSummaryText"></p>
+
+    </div>
+
+    <!-- Internship Recommendation Page -->
+
+    <div class="glass-card">
+
+        <h2>Recommended Internships</h2>
+
+        <div id="internshipRecommendations" class="project-option-grid">
+
+            <div class="project-card">
+
+                <h3>No Recommendations Yet</h3>
+
+                <p>
+                    Fill in the form above and click "Generate Internship Recommendations"
+                    to receive AI-matched internship opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Match Score Page -->
+
+    <div class="glass-card" id="matchScoreCard" hidden>
+
+        <h2>Match Score</h2>
+
+        <div class="dashboard-bottom" style="margin-top:0;">
+
+            <div class="chart-wrap">
+                <canvas id="matchScoreChart" role="img" aria-label="Bar chart comparing match score across recommended internships"></canvas>
+            </div>
+
+            <div class="chart-wrap-doughnut" style="position:relative;">
+                <canvas id="avgMatchChart" role="img" aria-label="Doughnut chart of average match score across recommendations"></canvas>
+                <div class="chart-center-label">
+                    <strong id="avgMatchValue">0%</strong>
+                    <span>Avg Match</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Missing Skills Page -->
+
+    <div class="glass-card" id="missingSkillsCard" hidden>
+
+        <h2>Missing Skills</h2>
+
+        <p class="field-hint-dark">Skills that showed up most often across your recommended internships.</p>
+
+        <div id="internshipMissingSkills" class="skills"></div>
+
+    </div>
+
+    <!-- Learning Resources Page -->
+
+    <div class="glass-card" id="internshipResourcesCard" hidden>
+
+        <h2>Learning Resources</h2>
+
+        <div class="candidate-grid" id="internshipResourcesList"></div>
+
+    </div>
+
+    <!-- Save -->
+
+    <div class="glass-card action-card" id="saveInternshipCard" hidden>
+
+        <button class="primary-btn" id="saveInternship" type="button">
+
+            <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+            Save Recommendation
+
+        </button>
+
+    </div>
+
+    <!-- Internship History Page -->
+
+    <div class="glass-card">
+
+        <h2>Internship Recommendation History</h2>
+
+        <div id="internshipHistory">
+
+            <div class="history-item">
+
+                <h3>No Saved Recommendations</h3>
+
+                <p>
+                    Your previous internship recommendations will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- Settings -->
+
+        <section id="settings" class="content-page">
+
+            <div class="page-heading">
+
+                <h1>Settings</h1>
+
+            </div>
+
+            <div class="glass-card">
+
+                <div class="goal-item">
+
+                    <span>Dark Mode</span>
+
+                    <input type="checkbox" checked>
+
+                </div>
+
+                <div class="goal-item">
+
+                    <span>Email Notifications</span>
+
+                    <input type="checkbox" checked>
+
+                </div>
+
+                <div class="goal-item">
+
+                    <span>AI Suggestions</span>
+
+                    <input type="checkbox" checked>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>
