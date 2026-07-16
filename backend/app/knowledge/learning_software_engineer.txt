@@ -1,0 +1,86 @@
+Role: Software Engineer Learning Roadmap
+
+Overview:
+This roadmap is for students targeting software engineering or software development internships. The goal is to become comfortable with coding, DSA, APIs, databases, and at least one strong application project.
+
+Recommended Learning Progression:
+
+Phase 1: Programming + Problem Solving Foundation
+Focus Skills:
+- one main programming language
+- OOP
+- DSA basics
+- debugging
+
+Topics:
+- arrays, strings, hashing
+- linked lists, stacks, queues
+- recursion basics
+- sorting and searching
+- time complexity basics
+- classes and objects
+- writing modular code
+
+Deliverables:
+- Solve a consistent set of DSA questions
+- Build one small console / logic-based project
+
+Phase 2: Application Development Fundamentals
+Focus Skills:
+- APIs
+- databases
+- backend or full-stack basics
+- Git/GitHub
+
+Topics:
+- SQL basics
+- CRUD operations
+- REST API basics
+- request-response flow
+- connecting backend with database
+- environment variables and project structure
+
+Deliverables:
+- Build a CRUD-based application
+- Push a properly structured project to GitHub
+
+Phase 3: Internship-Ready Engineering Projects
+Focus Skills:
+- full application development
+- testing basics
+- deployment basics
+- project depth
+
+Topics:
+- authentication basics
+- reusable code structure
+- error handling
+- deployment basics
+- basic unit testing
+- writing README and setup instructions
+
+Deliverables:
+- Build one full project with auth + database + API integration
+- Maintain GitHub repo with clean code and documentation
+
+Recommended Project Ideas:
+- Task Manager App
+- Chat Application
+- Internship / Job Portal
+- Expense Tracker
+- Collaborative Notes App
+- Resume Intelligence Platform
+- Event Booking / E-commerce style app
+
+Priority Concepts for Intern Readiness:
+- DSA + problem solving
+- SQL
+- APIs
+- one strong full-stack or backend project
+- debugging and clean coding
+
+Common Weaknesses to Fix:
+- no substantial project depth
+- only frontend or only toy apps
+- weak DSA preparation
+- poor understanding of API and DB integration

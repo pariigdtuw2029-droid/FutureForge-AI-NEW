@@ -1,0 +1,24 @@
+# FutureForge AI Backend (backend/app) — dependencies
+# This file did not exist before; compiled from the actual imports in the
+# codebase (fastapi, pymongo, bcrypt, jose, langgraph, langchain, chroma,
+# google-genai, pypdf).
+
+fastapi>=0.111
+uvicorn[standard]>=0.30
+pydantic[email]>=2.7
+python-dotenv>=1.0
+python-multipart>=0.0.9   # required by OAuth2PasswordRequestForm and POST /resume/upload
+
+pymongo>=4.7
+bson>=0.5.10
+
+bcrypt>=4.1
+python-jose[cryptography]>=3.3
+
+langgraph>=0.1
+langchain-google-genai>=1.0
+langchain-chroma>=0.1
+chromadb>=0.5
+google-genai>=0.1
+
+pypdf>=4.2

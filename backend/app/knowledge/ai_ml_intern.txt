@@ -1,0 +1,61 @@
+Role: AI/ML Intern
+
+Overview:
+An AI/ML Intern is expected to work on data-driven and machine learning tasks such as data preprocessing, model training, evaluation, experimentation, and sometimes deployment support. The role usually requires strong Python-based problem solving, understanding of ML fundamentals, and the ability to build small but meaningful ML projects.
+
+Required Skills:
+- Python
+- NumPy
+- pandas
+- scikit-learn
+- Machine Learning fundamentals
+- Supervised learning concepts
+- Data preprocessing and cleaning
+- Feature engineering basics
+- Model training and evaluation
+- Train/test split, cross-validation basics
+- Performance metrics such as accuracy, precision, recall, F1-score
+- Exploratory Data Analysis (EDA)
+- Data visualization basics
+- SQL
+- Git / GitHub
+- Problem solving and debugging
+
+Preferred Skills:
+- Deep Learning basics
+- TensorFlow or PyTorch
+- NLP basics
+- Computer Vision basics
+- Model deployment basics
+- Streamlit / Flask / FastAPI for ML app demos
+- Docker basics
+- Statistics / probability fundamentals
+- Hyperparameter tuning
+- Dimensionality reduction basics
+- Time series basics
+- Cloud basics for ML workflows
+- LangChain / LLM application basics for AI projects
+
+Expected Projects / Portfolio Signals:
+- House price prediction / regression project
+- Spam classifier / sentiment analysis project
+- Customer churn prediction / classification project
+- Resume screening / job matching ML project
+- Student performance prediction / recommendation project
+- Fake news detection / NLP mini-project
+- Image classification project (basic CNN if DL is known)
+- End-to-end ML project with preprocessing, training, evaluation, and simple deployment
+- A project notebook or app that clearly explains dataset, approach, metrics, and results
+
+Good Evidence in Resume:
+- Projects that mention dataset handling, preprocessing, model training, and evaluation
+- Use of Python ML stack like pandas, sklearn, matplotlib
+- GitHub links with notebooks or ML apps
+- Mention of internship/research work involving data or ML models
+
+Common Skill Gaps:
+- Resume lists “Machine Learning” but no actual ML project is present
+- SQL missing
+- No evaluation metrics mentioned in projects
+- No evidence of preprocessing / feature engineering
+- Deep learning claimed but no project support

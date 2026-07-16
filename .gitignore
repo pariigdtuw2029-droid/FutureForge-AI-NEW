@@ -1,0 +1,16 @@
+# Backend
+backend/.env
+backend/app/__pycache__/
+backend/app/*/__pycache__/
+backend/venv/
+backend/.venv/
+*.pyc
+
+# Chroma vector store data (regenerate via build_vector_store.py, or keep
+# if you want to ship the pre-built index — currently included)
+# backend/app/chroma_db/
+
+# OS / editor cruft
+.DS_Store
+.vscode/
+*.log

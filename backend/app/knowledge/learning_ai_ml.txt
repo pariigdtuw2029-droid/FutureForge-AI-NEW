@@ -1,0 +1,91 @@
+Role: AI/ML Intern Learning Roadmap
+
+Overview:
+This roadmap is for a student targeting AI/ML internship roles. The goal is to build strong fundamentals in Python-based data work, machine learning, evaluation, and one or two strong end-to-end projects.
+
+Recommended Learning Progression:
+
+Phase 1: Foundation in Data and Python for ML
+Focus Skills:
+- Python for data work
+- NumPy
+- pandas
+- Data cleaning
+- Exploratory Data Analysis (EDA)
+- Visualization basics
+
+Topics:
+- NumPy arrays, indexing, reshaping
+- pandas DataFrame operations
+- handling missing values
+- duplicates, outliers, basic preprocessing
+- filtering, grouping, aggregation
+- matplotlib / seaborn basics
+- reading CSV files and basic dataset inspection
+
+Deliverables:
+- Complete one EDA notebook on a real dataset
+- Build a mini analysis project with cleaning + visualizations
+
+Phase 2: Core Machine Learning
+Focus Skills:
+- scikit-learn
+- regression
+- classification
+- train-test split
+- evaluation metrics
+- feature engineering basics
+
+Topics:
+- linear regression
+- logistic regression
+- decision trees / random forest basics
+- model training pipeline
+- accuracy, precision, recall, F1-score
+- confusion matrix
+- scaling / encoding basics
+- cross-validation basics
+
+Deliverables:
+- Build one end-to-end ML project with training + evaluation
+- Write a short explanation of model choice and results
+
+Phase 3: Role-Ready Projects and Deployment
+Focus Skills:
+- project building
+- model deployment basics
+- GitHub portfolio polishing
+- optional Streamlit / Flask app demo
+
+Topics:
+- packaging an ML project cleanly
+- model saving/loading
+- building a simple Streamlit interface
+- writing project README and results summary
+- presenting metrics and insights clearly
+
+Deliverables:
+- Deploy one ML project using Streamlit or Flask
+- Upload cleaned project code and README to GitHub
+
+Recommended Project Ideas:
+- House Price Prediction
+- Customer Churn Prediction
+- Sentiment Analysis
+- Resume Screening / Job Matching
+- Student Performance Prediction
+- Movie Recommendation Mini Project
+
+Priority Concepts for Intern Readiness:
+- Python + pandas + NumPy
+- EDA
+- scikit-learn
+- evaluation metrics
+- one strong ML project
+- SQL basics for data handling
+
+Common Weaknesses to Fix:
+- listing “machine learning” without a real project
+- weak understanding of evaluation metrics
+- no preprocessing / feature engineering evidence
+- no deployed project or polished GitHub repo
