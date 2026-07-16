@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign In · AI HelpDesk Agent</title>
+
+    <link rel="stylesheet" href="auth.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <meta name="description" content="Sign in to AI HelpDesk Agent to access your resume analysis, skill gap tracking, and personalized career roadmap.">
+    <meta name="theme-color" content="#06142E">
+
+</head>
+
+<body>
+
+<a href="#login-form" class="skip-link">Skip to sign-in form</a>
+
+<div class="background" aria-hidden="true">
+    <div class="aurora aurora1"></div>
+    <div class="aurora aurora2"></div>
+</div>
+
+<div class="auth-page">
+
+    <!-- ========================= -->
+    <!-- Brand panel -->
+    <!-- ========================= -->
+
+    <aside class="auth-brand">
+
+        <div class="brand-top">
+
+            <a href="../index.html" class="logo" aria-label="AI HelpDesk Agent home">
+
+                <div class="logo-circle" aria-hidden="true">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <div>
+                    <h2>AI HelpDesk</h2>
+                    <span>Career Operating System</span>
+                </div>
+
+            </a>
+
+        </div>
+
+        <div class="brand-middle">
+
+            <h1>Your career, run by a team of AI agents.</h1>
+
+            <p>
+                Sign in to pick up where you left off — resume score, skill roadmap,
+                and mock interview feedback, all in one place.
+            </p>
+
+            <div class="agent-preview" aria-hidden="true">
+
+                <div class="preview-head">
+                    <span class="preview-dot"></span>
+                    Resume Analyzer Agent — latest run
+                </div>
+
+                <div class="preview-row">
+                    <span>Overall Score</span>
+                    <span class="preview-score">87 / 100</span>
+                </div>
+
+                <div class="preview-row" style="flex-direction:column;align-items:stretch;">
+                    <span>ATS Match</span>
+                    <div class="preview-bar">
+                        <span style="width:82%"></span>
+                    </div>
+                </div>
+
+                <div class="preview-row">
+                    <span>Missing Skills</span>
+                    <span>Docker, GraphQL</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="brand-bottom">
+
+            <div>
+                <strong>12k+</strong>
+                Resumes analyzed
+            </div>
+
+            <div>
+                <strong>4.9/5</strong>
+                Average rating
+            </div>
+
+            <div>
+                <strong>9</strong>
+                AI agents working for you
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ========================= -->
+    <!-- Form panel -->
+    <!-- ========================= -->
+
+    <main class="auth-form-panel">
+
+        <div class="auth-card">
+
+            <a href="../index.html" class="auth-back">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                Back to home
+            </a>
+
+            <h1>Welcome back</h1>
+            <p class="auth-subtitle">
+                New here? <a href="signup.html">Create an account</a>
+            </p>
+
+            <div class="social-row">
+
+                <button class="social-btn" type="button" aria-label="Sign in with Google">
+                    <i class="fa-brands fa-google" aria-hidden="true"></i>
+                    Google
+                </button>
+
+                <button class="social-btn" type="button" aria-label="Sign in with GitHub">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    GitHub
+                </button>
+
+            </div>
+
+            <div class="divider">or sign in with email</div>
+
+            <form id="login-form" novalidate>
+
+                <div class="field">
+
+                    <label for="login-email">Email address</label>
+
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-envelope field-icon" aria-hidden="true"></i>
+                        <input
+                            id="login-email"
+                            name="email"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="you@example.com"
+                            required>
+                    </div>
+
+                    <span class="field-error" role="alert"></span>
+
+                </div>
+
+                <div class="field">
+
+                    <label for="login-password">Password</label>
+
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-lock field-icon" aria-hidden="true"></i>
+                        <input
+                            id="login-password"
+                            name="password"
+                            type="password"
+                            autocomplete="current-password"
+                            placeholder="Enter your password"
+                            required>
+                        <button type="button" class="password-toggle" aria-label="Show password">
+                            <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <span class="field-error" role="alert"></span>
+
+                </div>
+
+                <div class="form-row-between">
+
+                    <label class="checkbox-row" style="font-size:13.5px;">
+                        <input type="checkbox" id="remember-me">
+                        Remember me
+                    </label>
+
+                    <a href="#" class="link-muted">Forgot password?</a>
+
+                </div>
+
+                <button class="auth-submit" type="submit">
+                    <span class="spinner" aria-hidden="true"></span>
+                    <span class="btn-text">Sign In</span>
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="auth.js"></script>
+
+</body>
+
+</html>
