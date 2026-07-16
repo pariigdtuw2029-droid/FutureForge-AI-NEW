@@ -13,3 +13,4 @@ db = client[settings.DATABASE_NAME]
 # Collections
 users_collection = db["users"]
 memory_collection = db["memory"]
+internship_collection = db["internships"]

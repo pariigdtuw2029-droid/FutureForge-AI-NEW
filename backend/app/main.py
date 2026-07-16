@@ -7,6 +7,8 @@ from app.routers.dashboard import router as dashboard_router
 from app.routers.career_progress import router as career_progress_router
 from app.routers.mentor import router as mentor_router
 from app.routers.orchestrator import router as orchestrator_router
+from app.routers.project import router as project_router
+from app.routers.internship import router as internship_router
 
 app = FastAPI(
     title="FutureForge AI Backend",
@@ -25,6 +27,8 @@ app.include_router(dashboard_router)
 app.include_router(mentor_router)
 app.include_router(orchestrator_router)
 app.include_router(career_progress_router)
+app.include_router(project_router)
+app.include_router(internship_router)
 # -------------------------
 # Startup Event
 # -------------------------

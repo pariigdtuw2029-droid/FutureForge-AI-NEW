@@ -35,7 +35,19 @@ def ask_gemini(prompt: str) -> str:
         if not response or not getattr(response, "text", None):
             raise Exception("Gemini returned an empty response.")
 
-        return response.text.strip()
+        text = response.text.strip()
+
+        # Remove Markdown code block if Gemini adds it
+        if text.startswith("```json"):
+            text = text.replace("```json", "", 1)
+
+        if text.startswith("```"):
+            text = text.replace("```", "", 1)
+
+        if text.endswith("```"):
+            text = text[:-3]
+
+        return text.strip()
 
     except Exception as e:
         raise Exception(f"Gemini API Error: {str(e)}")
