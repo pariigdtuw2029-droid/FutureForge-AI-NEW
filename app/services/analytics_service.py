@@ -1,7 +1,7 @@
 from app.database.mongodb import (
     resume_collection,
     project_collection,
-    internship_collection,
+    
     roadmap_collection,
 )
 
@@ -21,11 +21,7 @@ async def get_recent_activity():
             "id": str(project["_id"])
         })
 
-    async for internship in internship_collection.find().sort("_id", -1).limit(5):
-        activities.append({
-            "type": "Internship Recommendation",
-            "id": str(internship["_id"])
-        })
+    
 
     async for roadmap in roadmap_collection.find().sort("_id", -1).limit(5):
         activities.append({

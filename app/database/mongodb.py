@@ -11,5 +11,5 @@ def get_database():
 user_collection=database["users"]
 resume_collection = database["resumes"]
 project_collection = database["projects"]
-internship_collection = database["internships"]
+
 roadmap_collection = database["roadmaps"]

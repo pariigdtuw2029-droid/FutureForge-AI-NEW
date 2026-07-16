@@ -7,7 +7,7 @@ from app.database.mongodb import client
 from app.api.routes.auth import router as auth_router
 from app.api.routes.resume import router as resume_router
 from app.api.routes.project import router as project_router
-from app.api.routes.internship import router as internship_router
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -36,7 +36,7 @@ app = FastAPI(
 app.include_router(auth_router)
 app.include_router(resume_router)
 app.include_router(project_router)
-app.include_router(internship_router)
+
 @app.get("/")
 async def root():
     return {
